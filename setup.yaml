@@ -1,0 +1,25 @@
+name: wu_zoom
+channels:
+    - apple
+    - defaults
+    - conda-forge
+    - anaconda
+dependencies:
+    - python
+    - pip
+    - jupyter
+    - scikit-learn
+    - scipy
+    - pandas
+    - pandas-datareader
+    - matplotlib
+    - pillow
+    - tqdm
+    - requests
+    - h5py
+    - pyyaml
+    - flask
+    - boto3
+    - ipykernel
+    - openjdk
+    - pyspark
