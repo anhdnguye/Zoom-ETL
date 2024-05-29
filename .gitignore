@@ -2,6 +2,6 @@
 airflow.cfg
 keys.json
 *.ipynb
-*.py
+webserver_config.py
 postgres-db-volume
 zoom-db-volume
