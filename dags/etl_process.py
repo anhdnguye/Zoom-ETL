@@ -1,4 +1,4 @@
-from airflow import DAG
+# from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.decorators import dag, task
 
@@ -7,7 +7,6 @@ import time
 import requests
 from datetime import datetime, timedelta
 from sqlalchemy import create_engine
-import configparser
 
 # database credential
 HOST_NAME = 'zoom'
@@ -26,13 +25,14 @@ default_args={
     'retry_delay': timedelta(minutes=5)
     }
 
-@dag(schedule='@once', default_args=default_args, start_date=datetime(2024, 5, 21),
+@dag('ETL', schedule='@once', default_args=default_args, start_date=datetime(2024, 5, 21),
      catchup=False, tags=['Zoom'], description='Extracting Data from Zoom')
 def etl_process():
 
     @task
     def get_all_users(**kwargs):
-        myToken = kwargs['ti'].xcom_pull(dag_id='OAuth_Zoom', task_ids='run_OAuth', key='access_token')
+        myToken = kwargs['ti'].xcom_pull(dag_id='OAuth_Zoom', task_ids='run_OAuth',
+                                         key='access_token', include_prior_dates=True)
 
         lstuser_endpoint = 'https://api.zoom.us/v2/users'
         params = {
@@ -52,13 +52,17 @@ def etl_process():
 
             user_ids = [(user['email']) for user in response['users']]
             user_email.extend(user_ids)
-        return user_email
+        kwargs['ti'].xcom_push(key='lstUsers', value=user_email)
+        # return user_email
 
     @task
-    def get_user_info(user_email, **kwargs):
+    def get_user_info(**kwargs):
         user_endpoint = 'https://api.zoom.us/v2/users'
 
-        myToken = kwargs['ti'].xcom_pull(dag_id='OAuth_Zoom', task_ids='run_OAuth', key='access_token')
+        myToken = kwargs['ti'].xcom_pull(dag_id='OAuth_Zoom', task_ids='run_OAuth',
+                                         key='access_token', include_prior_dates=True)
+        user_email = kwargs['ti'].xcom_pull(task_ids='get_all_users',
+                                            key='lstUsers', include_prior_dates=True)
         header = {'Authorization' : 'Bearer ' + myToken}
         users_data = []
         for email in user_email:
@@ -68,39 +72,13 @@ def etl_process():
                 users_data.append(data_)
             except:
                 if response.status_code in [401]:
-                    myToken = kwargs['ti'].xcom_pull(dag_id='OAuth_Zoom', task_ids='run_OAuth', key='access_token')
+                    myToken = kwargs['ti'].xcom_pull(dag_id='OAuth_Zoom', task_ids='run_OAuth',
+                                                     key='access_token', include_prior_dates=True)
                     response = requests.get(url=user_endpoint + '/' + email, headers=header)
                     data_ = response.json()
                     users_data.append(data_)
+        logging.info(f'number of users:{len(users_data)}')
+    
+    get_all_users() >> get_user_info()
 
 etl_process()
-
-# with DAG(
-#     'Zoom_ETL',
-#     default_args={
-#         'owner': 'Anh',
-#         'depends_on_past': False,
-#         'email': ['anhnguyen@westcliff.edu'],
-#         'email_on_failure': False,
-#         'email_on_retry': False,
-#         'retries': 1,
-#         'retry_delay': timedelta(minutes=5)
-#     },
-#     description='Extracting Data from Zoom',
-#     start_date=datetime(2024, 5, 21),
-#     schedule='@once',
-#     catchup=False,
-#     tags=['Zoom']
-
-# ) as dag:
-#     get_all_users = PythonOperator (
-#         task_id='get_users',
-#         python_callable=get_all_users,
-#     )
-
-#     get_user_info = PythonOperator (
-#         task_id='get_info',
-#         python_callable=get_user_info
-#     )
-
-#     get_all_users >> get_user_info
