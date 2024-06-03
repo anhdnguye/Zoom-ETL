@@ -7,3 +7,5 @@ postgres-db-volume
 zoom-db-volume
 test.py
 airflow-webserver.pid
+.env
+__pycache/
