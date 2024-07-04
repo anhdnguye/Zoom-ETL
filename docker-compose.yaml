@@ -42,11 +42,12 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: zoom
-      POSTGRES_PASSWORD: zoom
-      POSTGRES_DB: zoom_db
+      POSTGRES_USER: ${ZOOM_USER}
+      POSTGRES_PASSWORD: ${ZOOM_PASS}
+      POSTGRES_DB: ${ZOOM_DATABASE}
     volumes:
       - ./zoom-db-volume:/var/lib/postgresql/data
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
 
   redis:
     image: redis:latest
