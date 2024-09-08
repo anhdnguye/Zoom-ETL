@@ -9,3 +9,4 @@ test.py
 airflow-webserver.pid
 .env
 .vs/
+.idea/
