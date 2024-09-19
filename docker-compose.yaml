@@ -23,31 +23,32 @@ x-airflow-common:
       condition: service_healthy
 
 services:
-  postgres:
-    image: postgres:latest
-    environment:
-      POSTGRES_USER: airflow
-      POSTGRES_PASSWORD: airflow
-      POSTGRES_DB: airflow
-    volumes:
-      - ./postgres-db-volume:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "airflow"]
-      interval: 5s
-      retries: 5
-    restart: always
-
   zoom_db:
     image: postgres:latest
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: ${ZOOM_USER}
-      POSTGRES_PASSWORD: ${ZOOM_PASS}
-      POSTGRES_DB: ${ZOOM_DATABASE}
+      POSTGRES_USER: ${ZOOM_USER:-postgres}
+      POSTGRES_PASSWORD: ${ZOOM_PASS:-postgres}
+      POSTGRES_DB: ${ZOOM_DATABASE:-temp_db}
     volumes:
       - ./zoom-db-volume:/var/lib/postgresql/data
-      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      # - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    restart: always
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${MY_USER}
+      POSTGRES_PASSWORD: ${PASSWORD}
+      POSTGRES_DB: ${DATABASE}
+    volumes:
+      - ./postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${MY_USER}"]
+      interval: 5s
+      retries: 5
+    restart: always
 
   redis:
     image: redis:latest
