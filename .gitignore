@@ -9,3 +9,4 @@ airflow-webserver.pid
 .env
 .vs/
 .idea/
+.DS_Store
