@@ -30,7 +30,7 @@ services:
     environment:
       POSTGRES_USER: ${ZOOM_USER:-postgres}
       POSTGRES_PASSWORD: ${ZOOM_PASS:-postgres}
-      POSTGRES_DB: ${ZOOM_DATABASE:-temp_db}
+      POSTGRES_DB: ${ZOOM_DATABASE:-postgres}
     volumes:
       - ./zoom-db-volume:/var/lib/postgresql/data
       # - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql

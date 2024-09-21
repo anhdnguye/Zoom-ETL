@@ -1,5 +1,4 @@
 # from airflow import DAG
-from airflow.operators.python import PythonOperator
 from airflow.decorators import dag, task
 
 import os
@@ -7,8 +6,10 @@ import logging
 import time
 import requests
 from datetime import datetime, timedelta
-from sqlalchemy import create_engine
-from dotenv import load_dotenv
+# from sqlalchemy import create_engine
+# from dotenv import load_dotenv
+
+import pandas as pd
 
 # database credential
 HOST_NAME = os.getenv('ZOOM_HOST_NAME')
