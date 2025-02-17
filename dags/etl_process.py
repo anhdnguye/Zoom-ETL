@@ -9,8 +9,6 @@ from datetime import datetime, timedelta
 # from sqlalchemy import create_engine
 # from dotenv import load_dotenv
 
-import pandas as pd
-
 # database credential
 HOST_NAME = os.getenv('ZOOM_HOST_NAME')
 DATABASE = os.getenv('ZOOM_DATABASE')
