@@ -12,9 +12,13 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
+    AIRFLOW__CORE__DEFAULT_TIMEZONE: 'America/Los_Angles'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
-    - ./:/opt/airflow
+    - ./airflow:/opt/airflow
+    - ./config:/opt/airflow/config
+    - ./logs:/opt/airflow/logs
+    - ./scripts:/opt/airflow/scripts
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-0}"
   depends_on:
     redis:
@@ -33,7 +37,7 @@ services:
       POSTGRES_DB: ${ZOOM_DATABASE:-postgres}
     volumes:
       - ./zoom-db-volume:/var/lib/postgresql/data
-      # - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
     restart: always
 
   postgres:

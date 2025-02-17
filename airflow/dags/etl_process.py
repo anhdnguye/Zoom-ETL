@@ -21,7 +21,7 @@ PORT_ID = 5432
 default_args={
     'owner': 'Anh',
     'depends_on_past': False,
-    'email': ['anhnguyen@westcliff.edu'],
+    'email': ['test@test.edu'],
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 1,
