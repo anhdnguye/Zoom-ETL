@@ -1,0 +1,1099 @@
+[2024-09-21T00:00:03.878+0000] {processor.py:186} INFO - Started process (PID=17804) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:00:03.878+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:00:03.880+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:00:03.880+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:00:03.886+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:00:03.909+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:00:03.908+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:00:03.925+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:00:03.925+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:00:03.937+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.064 seconds
+[2024-09-21T00:00:34.155+0000] {processor.py:186} INFO - Started process (PID=17822) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:00:34.156+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:00:34.157+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:00:34.157+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:00:34.163+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:00:34.186+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:00:34.186+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:00:34.203+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:00:34.203+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:00:34.217+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:01:04.401+0000] {processor.py:186} INFO - Started process (PID=17847) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:01:04.402+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:01:04.403+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:01:04.403+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:01:04.409+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:01:04.430+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:01:04.429+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:01:04.445+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:01:04.445+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:01:04.458+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.063 seconds
+[2024-09-21T00:01:34.667+0000] {processor.py:186} INFO - Started process (PID=17872) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:01:34.669+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:01:34.670+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:01:34.670+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:01:34.677+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:01:34.698+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:01:34.698+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:01:34.714+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:01:34.714+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:01:34.726+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.064 seconds
+[2024-09-21T00:02:04.917+0000] {processor.py:186} INFO - Started process (PID=17890) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:02:04.921+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:02:04.923+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:02:04.923+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:02:04.929+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:02:04.949+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:02:04.949+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:02:04.966+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:02:04.966+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:02:04.979+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:02:35.270+0000] {processor.py:186} INFO - Started process (PID=17915) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:02:35.271+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:02:35.273+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:02:35.273+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:02:35.280+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:02:35.304+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:02:35.303+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:02:35.325+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:02:35.325+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:02:35.341+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.076 seconds
+[2024-09-21T00:03:05.707+0000] {processor.py:186} INFO - Started process (PID=17933) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:03:05.708+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:03:05.710+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:03:05.710+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:03:05.718+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:03:05.748+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:03:05.747+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:03:05.770+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:03:05.770+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:03:05.788+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.087 seconds
+[2024-09-21T00:03:36.146+0000] {processor.py:186} INFO - Started process (PID=17958) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:03:36.147+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:03:36.148+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:03:36.148+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:03:36.155+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:03:36.178+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:03:36.178+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:03:36.196+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:03:36.196+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:03:36.209+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.068 seconds
+[2024-09-21T00:04:06.512+0000] {processor.py:186} INFO - Started process (PID=17975) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:04:06.513+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:04:06.515+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:04:06.515+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:04:06.521+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:04:06.542+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:04:06.542+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:04:06.560+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:04:06.560+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:04:06.572+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.064 seconds
+[2024-09-21T00:04:36.884+0000] {processor.py:186} INFO - Started process (PID=18000) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:04:36.885+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:04:36.887+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:04:36.887+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:04:36.894+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:04:36.921+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:04:36.921+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:04:36.941+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:04:36.941+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:04:36.956+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.078 seconds
+[2024-09-21T00:05:07.303+0000] {processor.py:186} INFO - Started process (PID=18018) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:05:07.304+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:05:07.305+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:05:07.305+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:05:07.311+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:05:07.333+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:05:07.333+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:05:07.351+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:05:07.351+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:05:07.364+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.066 seconds
+[2024-09-21T00:05:37.892+0000] {processor.py:186} INFO - Started process (PID=18043) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:05:37.893+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:05:37.895+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:05:37.894+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:05:37.903+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:05:37.926+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:05:37.926+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:05:37.946+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:05:37.945+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:05:37.959+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.072 seconds
+[2024-09-21T00:06:08.176+0000] {processor.py:186} INFO - Started process (PID=18061) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:06:08.177+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:06:08.179+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:06:08.178+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:06:08.185+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:06:08.206+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:06:08.206+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:06:08.225+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:06:08.225+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:06:08.239+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:06:38.542+0000] {processor.py:186} INFO - Started process (PID=18086) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:06:38.543+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:06:38.545+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:06:38.545+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:06:38.553+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:06:38.578+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:06:38.578+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:06:38.599+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:06:38.599+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:06:38.614+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.076 seconds
+[2024-09-21T00:07:08.956+0000] {processor.py:186} INFO - Started process (PID=18104) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:07:08.957+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:07:08.959+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:07:08.958+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:07:08.965+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:07:08.986+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:07:08.986+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:07:09.003+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:07:09.003+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:07:09.016+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:07:39.320+0000] {processor.py:186} INFO - Started process (PID=18130) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:07:39.321+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:07:39.323+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:07:39.322+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:07:39.331+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:07:39.353+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:07:39.353+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:07:39.373+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:07:39.373+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:07:39.389+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.075 seconds
+[2024-09-21T00:08:09.948+0000] {processor.py:186} INFO - Started process (PID=18148) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:08:09.949+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:08:09.951+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:08:09.951+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:08:09.958+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:08:09.982+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:08:09.982+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:08:10.002+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:08:10.002+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:08:10.019+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.078 seconds
+[2024-09-21T00:08:40.254+0000] {processor.py:186} INFO - Started process (PID=18173) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:08:40.255+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:08:40.257+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:08:40.256+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:08:40.265+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:08:40.288+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:08:40.288+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:08:40.308+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:08:40.308+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:08:40.322+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.073 seconds
+[2024-09-21T00:09:10.640+0000] {processor.py:186} INFO - Started process (PID=18191) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:09:10.641+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:09:10.643+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:09:10.643+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:09:10.651+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:09:10.675+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:09:10.675+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:09:10.694+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:09:10.694+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:09:10.707+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.072 seconds
+[2024-09-21T00:09:41.050+0000] {processor.py:186} INFO - Started process (PID=18216) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:09:41.051+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:09:41.053+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:09:41.053+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:09:41.061+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:09:41.093+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:09:41.092+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:09:41.113+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:09:41.113+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:09:41.126+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.083 seconds
+[2024-09-21T00:10:11.447+0000] {processor.py:186} INFO - Started process (PID=18234) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:10:11.448+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:10:11.450+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:10:11.450+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:10:11.457+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:10:11.479+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:10:11.479+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:10:11.500+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:10:11.499+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:10:11.514+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.072 seconds
+[2024-09-21T00:10:41.846+0000] {processor.py:186} INFO - Started process (PID=18259) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:10:41.846+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:10:41.848+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:10:41.848+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:10:41.854+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:10:41.876+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:10:41.876+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:10:41.894+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:10:41.894+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:10:41.908+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:11:12.229+0000] {processor.py:186} INFO - Started process (PID=18277) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:11:12.230+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:11:12.232+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:11:12.232+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:11:12.238+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:11:12.260+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:11:12.260+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:11:12.277+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:11:12.277+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:11:12.290+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:11:42.612+0000] {processor.py:186} INFO - Started process (PID=18302) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:11:42.613+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:11:42.615+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:11:42.615+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:11:42.623+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:11:42.644+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:11:42.644+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:11:42.661+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:11:42.660+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:11:42.674+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.066 seconds
+[2024-09-21T00:12:12.958+0000] {processor.py:186} INFO - Started process (PID=18320) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:12:12.959+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:12:12.961+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:12:12.960+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:12:12.968+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:12:12.990+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:12:12.990+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:12:13.007+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:12:13.007+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:12:13.019+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.066 seconds
+[2024-09-21T00:12:43.545+0000] {processor.py:186} INFO - Started process (PID=18345) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:12:43.546+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:12:43.548+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:12:43.547+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:12:43.554+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:12:43.575+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:12:43.575+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:12:43.591+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:12:43.591+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:12:43.604+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.064 seconds
+[2024-09-21T00:13:13.844+0000] {processor.py:186} INFO - Started process (PID=18363) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:13:13.845+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:13:13.846+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:13:13.846+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:13:13.852+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:13:13.874+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:13:13.874+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:13:13.891+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:13:13.891+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:13:13.904+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:13:44.246+0000] {processor.py:186} INFO - Started process (PID=18388) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:13:44.248+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:13:44.251+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:13:44.250+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:13:44.261+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:13:44.288+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:13:44.288+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:13:44.314+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:13:44.313+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:13:44.334+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.095 seconds
+[2024-09-21T00:14:14.659+0000] {processor.py:186} INFO - Started process (PID=18406) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:14:14.660+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:14:14.663+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:14:14.662+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:14:14.669+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:14:14.694+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:14:14.693+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:14:14.711+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:14:14.711+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:14:14.726+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.072 seconds
+[2024-09-21T00:14:45.267+0000] {processor.py:186} INFO - Started process (PID=18431) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:14:45.268+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:14:45.271+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:14:45.270+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:14:45.278+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:14:45.301+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:14:45.301+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:14:45.320+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:14:45.319+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:14:45.334+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.073 seconds
+[2024-09-21T00:15:15.595+0000] {processor.py:186} INFO - Started process (PID=18449) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:15:15.596+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:15:15.598+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:15:15.598+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:15:15.605+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:15:15.626+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:15:15.626+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:15:15.644+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:15:15.643+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:15:15.657+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:15:45.961+0000] {processor.py:186} INFO - Started process (PID=18474) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:15:45.962+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:15:45.964+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:15:45.964+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:15:45.970+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:15:45.992+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:15:45.992+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:15:46.010+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:15:46.010+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:15:46.022+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:16:16.326+0000] {processor.py:186} INFO - Started process (PID=18492) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:16:16.328+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:16:16.333+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:16:16.332+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:16:16.340+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:16:16.374+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:16:16.373+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:16:16.403+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:16:16.403+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:16:16.428+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.109 seconds
+[2024-09-21T00:16:46.737+0000] {processor.py:186} INFO - Started process (PID=18517) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:16:46.738+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:16:46.741+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:16:46.740+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:16:46.749+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:16:46.775+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:16:46.775+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:16:46.794+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:16:46.794+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:16:46.808+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.076 seconds
+[2024-09-21T00:17:17.132+0000] {processor.py:186} INFO - Started process (PID=18535) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:17:17.133+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:17:17.135+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:17:17.135+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:17:17.141+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:17:17.162+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:17:17.162+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:17:17.178+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:17:17.178+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:17:17.190+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.062 seconds
+[2024-09-21T00:17:47.506+0000] {processor.py:186} INFO - Started process (PID=18560) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:17:47.507+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:17:47.509+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:17:47.508+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:17:47.515+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:17:47.537+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:17:47.537+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:17:47.554+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:17:47.554+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:17:47.567+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.066 seconds
+[2024-09-21T00:18:17.920+0000] {processor.py:186} INFO - Started process (PID=18578) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:18:17.921+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:18:17.923+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:18:17.923+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:18:17.930+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:18:17.952+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:18:17.952+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:18:17.973+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:18:17.972+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:18:17.987+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.072 seconds
+[2024-09-21T00:18:48.341+0000] {processor.py:186} INFO - Started process (PID=18604) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:18:48.342+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:18:48.344+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:18:48.343+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:18:48.350+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:18:48.373+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:18:48.373+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:18:48.393+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:18:48.392+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:18:48.406+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.071 seconds
+[2024-09-21T00:19:18.739+0000] {processor.py:186} INFO - Started process (PID=18622) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:19:18.740+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:19:18.742+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:19:18.742+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:19:18.749+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:19:18.769+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:19:18.769+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:19:18.785+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:19:18.785+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:19:18.797+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.063 seconds
+[2024-09-21T00:19:49.117+0000] {processor.py:186} INFO - Started process (PID=18647) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:19:49.118+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:19:49.119+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:19:49.119+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:19:49.126+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:19:49.151+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:19:49.151+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:19:49.170+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:19:49.169+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:19:49.186+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.074 seconds
+[2024-09-21T00:20:19.527+0000] {processor.py:186} INFO - Started process (PID=18665) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:20:19.528+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:20:19.531+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:20:19.530+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:20:19.540+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:20:19.562+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:20:19.562+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:20:19.582+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:20:19.582+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:20:19.599+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.079 seconds
+[2024-09-21T00:20:49.880+0000] {processor.py:186} INFO - Started process (PID=18690) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:20:49.881+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:20:49.882+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:20:49.882+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:20:49.889+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:20:49.909+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:20:49.908+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:20:49.925+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:20:49.925+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:20:49.937+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.062 seconds
+[2024-09-21T00:21:20.264+0000] {processor.py:186} INFO - Started process (PID=18708) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:21:20.265+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:21:20.267+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:21:20.267+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:21:20.274+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:21:20.298+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:21:20.298+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:21:20.316+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:21:20.316+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:21:20.329+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.070 seconds
+[2024-09-21T00:21:50.820+0000] {processor.py:186} INFO - Started process (PID=18733) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:21:50.821+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:21:50.822+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:21:50.822+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:21:50.828+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:21:50.848+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:21:50.847+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:21:50.864+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:21:50.864+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:21:50.875+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.060 seconds
+[2024-09-21T00:22:21.118+0000] {processor.py:186} INFO - Started process (PID=18758) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:22:21.119+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:22:21.121+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:22:21.121+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:22:21.127+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:22:21.149+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:22:21.149+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:22:21.168+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:22:21.167+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:22:21.181+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:22:51.528+0000] {processor.py:186} INFO - Started process (PID=18776) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:22:51.529+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:22:51.531+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:22:51.530+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:22:51.536+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:22:51.556+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:22:51.556+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:22:51.572+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:22:51.572+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:22:51.585+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.061 seconds
+[2024-09-21T00:23:21.927+0000] {processor.py:186} INFO - Started process (PID=18801) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:23:21.928+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:23:21.930+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:23:21.930+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:23:21.937+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:23:21.961+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:23:21.961+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:23:21.981+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:23:21.981+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:23:21.999+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.077 seconds
+[2024-09-21T00:23:52.318+0000] {processor.py:186} INFO - Started process (PID=18819) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:23:52.319+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:23:52.321+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:23:52.321+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:23:52.329+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:23:52.355+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:23:52.354+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:23:52.372+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:23:52.372+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:23:52.385+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.072 seconds
+[2024-09-21T00:24:22.712+0000] {processor.py:186} INFO - Started process (PID=18845) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:24:22.713+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:24:22.715+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:24:22.714+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:24:22.721+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:24:22.741+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:24:22.741+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:24:22.760+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:24:22.760+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:24:22.773+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.066 seconds
+[2024-09-21T00:24:53.108+0000] {processor.py:186} INFO - Started process (PID=18863) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:24:53.109+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:24:53.111+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:24:53.111+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:24:53.118+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:24:53.143+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:24:53.143+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:24:53.163+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:24:53.163+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:24:53.179+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.077 seconds
+[2024-09-21T00:25:23.529+0000] {processor.py:186} INFO - Started process (PID=18888) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:25:23.530+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:25:23.532+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:25:23.532+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:25:23.538+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:25:23.560+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:25:23.559+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:25:23.576+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:25:23.576+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:25:23.589+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.064 seconds
+[2024-09-21T00:25:53.925+0000] {processor.py:186} INFO - Started process (PID=18906) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:25:53.926+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:25:53.928+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:25:53.928+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:25:53.934+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:25:53.956+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:25:53.956+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:25:53.974+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:25:53.973+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:25:53.987+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:26:24.189+0000] {processor.py:186} INFO - Started process (PID=18930) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:26:24.193+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:26:24.195+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:26:24.194+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:26:24.201+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:26:24.221+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:26:24.221+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:26:24.238+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:26:24.237+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:26:24.250+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.066 seconds
+[2024-09-21T00:26:54.465+0000] {processor.py:186} INFO - Started process (PID=18947) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:26:54.468+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:26:54.470+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:26:54.470+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:26:54.477+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:26:54.500+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:26:54.500+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:26:54.518+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:26:54.518+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:26:54.532+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.071 seconds
+[2024-09-21T00:27:24.759+0000] {processor.py:186} INFO - Started process (PID=18971) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:27:24.760+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:27:24.762+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:27:24.762+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:27:24.768+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:27:24.787+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:27:24.787+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:27:24.803+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:27:24.803+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:27:24.816+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.062 seconds
+[2024-09-21T00:27:55.057+0000] {processor.py:186} INFO - Started process (PID=18988) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:27:55.062+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:27:55.064+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:27:55.063+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:27:55.070+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:27:55.091+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:27:55.091+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:27:55.107+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:27:55.107+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:27:55.119+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:28:25.322+0000] {processor.py:186} INFO - Started process (PID=19012) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:28:25.323+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:28:25.325+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:28:25.325+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:28:25.330+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:28:25.351+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:28:25.351+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:28:25.367+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:28:25.367+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:28:25.380+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.063 seconds
+[2024-09-21T00:28:55.601+0000] {processor.py:186} INFO - Started process (PID=19029) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:28:55.606+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:28:55.608+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:28:55.607+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:28:55.614+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:28:55.634+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:28:55.634+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:28:55.651+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:28:55.651+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:28:55.664+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:29:25.929+0000] {processor.py:186} INFO - Started process (PID=19053) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:29:25.931+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:29:25.933+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:29:25.932+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:29:25.945+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:29:25.978+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:29:25.977+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:29:26.002+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:29:26.002+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:29:26.021+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.098 seconds
+[2024-09-21T00:29:56.281+0000] {processor.py:186} INFO - Started process (PID=19077) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:29:56.282+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:29:56.284+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:29:56.283+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:29:56.290+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:29:56.318+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:29:56.317+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:29:56.335+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:29:56.335+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:29:56.349+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.073 seconds
+[2024-09-21T00:30:26.578+0000] {processor.py:186} INFO - Started process (PID=19094) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:30:26.584+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:30:26.586+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:30:26.586+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:30:26.592+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:30:26.611+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:30:26.611+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:30:26.628+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:30:26.627+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:30:26.640+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.066 seconds
+[2024-09-21T00:30:56.881+0000] {processor.py:186} INFO - Started process (PID=19118) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:30:56.888+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:30:56.890+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:30:56.890+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:30:56.897+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:30:56.920+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:30:56.920+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:30:56.938+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:30:56.937+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:30:56.952+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.076 seconds
+[2024-09-21T00:31:27.182+0000] {processor.py:186} INFO - Started process (PID=19135) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:31:27.184+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:31:27.185+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:31:27.185+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:31:27.191+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:31:27.210+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:31:27.210+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:31:27.225+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:31:27.225+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:31:27.239+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.061 seconds
+[2024-09-21T00:31:57.443+0000] {processor.py:186} INFO - Started process (PID=19160) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:31:57.444+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:31:57.446+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:31:57.446+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:31:57.452+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:31:57.473+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:31:57.473+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:31:57.490+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:31:57.490+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:31:57.503+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:32:27.766+0000] {processor.py:186} INFO - Started process (PID=19177) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:32:27.771+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:32:27.773+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:32:27.773+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:32:27.779+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:32:27.798+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:32:27.798+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:32:27.815+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:32:27.815+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:32:27.827+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:32:58.042+0000] {processor.py:186} INFO - Started process (PID=19201) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:32:58.044+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:32:58.046+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:32:58.045+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:32:58.053+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:32:58.076+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:32:58.076+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:32:58.096+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:32:58.096+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:32:58.110+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.073 seconds
+[2024-09-21T00:33:28.385+0000] {processor.py:186} INFO - Started process (PID=19219) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:33:28.386+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:33:28.388+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:33:28.387+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:33:28.395+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:33:28.413+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:33:28.413+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:33:28.428+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:33:28.428+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:33:28.441+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.061 seconds
+[2024-09-21T00:33:58.695+0000] {processor.py:186} INFO - Started process (PID=19244) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:33:58.699+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:33:58.701+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:33:58.701+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:33:58.707+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:33:58.726+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:33:58.726+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:33:58.743+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:33:58.742+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:33:58.755+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.064 seconds
+[2024-09-21T00:34:28.987+0000] {processor.py:186} INFO - Started process (PID=19262) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:34:28.988+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:34:28.990+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:34:28.989+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:34:28.996+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:34:29.019+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:34:29.019+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:34:29.036+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:34:29.036+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:34:29.047+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:34:59.311+0000] {processor.py:186} INFO - Started process (PID=19287) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:34:59.312+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:34:59.314+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:34:59.313+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:34:59.320+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:34:59.339+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:34:59.338+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:34:59.353+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:34:59.353+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:34:59.365+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.059 seconds
+[2024-09-21T00:35:29.682+0000] {processor.py:186} INFO - Started process (PID=19305) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:35:29.683+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:35:29.686+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:35:29.685+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:35:29.696+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:35:29.716+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:35:29.716+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:35:29.734+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:35:29.734+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:35:29.749+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.091 seconds
+[2024-09-21T00:35:59.983+0000] {processor.py:186} INFO - Started process (PID=19330) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:35:59.984+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:35:59.985+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:35:59.985+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:35:59.991+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:36:00.010+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:36:00.010+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:36:00.026+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:36:00.026+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:36:00.040+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.061 seconds
+[2024-09-21T00:36:30.290+0000] {processor.py:186} INFO - Started process (PID=19348) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:36:30.300+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:36:30.302+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:36:30.302+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:36:30.308+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:36:30.329+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:36:30.329+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:36:30.346+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:36:30.346+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:36:30.359+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.074 seconds
+[2024-09-21T00:37:00.619+0000] {processor.py:186} INFO - Started process (PID=19374) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:37:00.620+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:37:00.622+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:37:00.622+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:37:00.628+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:37:00.651+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:37:00.651+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:37:00.670+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:37:00.670+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:37:00.682+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.069 seconds
+[2024-09-21T00:37:30.933+0000] {processor.py:186} INFO - Started process (PID=19392) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:37:30.935+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:37:30.937+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:37:30.937+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:37:30.943+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:37:30.965+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:37:30.965+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:37:30.981+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:37:30.981+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:37:30.994+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:38:01.248+0000] {processor.py:186} INFO - Started process (PID=19417) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:38:01.249+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:38:01.251+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:38:01.250+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:38:01.257+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:38:01.275+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:38:01.275+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:38:01.290+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:38:01.290+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:38:01.304+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.060 seconds
+[2024-09-21T00:38:31.531+0000] {processor.py:186} INFO - Started process (PID=19435) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:38:31.532+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:38:31.534+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:38:31.534+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:38:31.540+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:38:31.564+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:38:31.564+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:38:31.582+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:38:31.582+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:38:31.596+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.069 seconds
+[2024-09-21T00:39:01.838+0000] {processor.py:186} INFO - Started process (PID=19460) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:39:01.839+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:39:01.841+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:39:01.841+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:39:01.849+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:39:01.871+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:39:01.870+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:39:01.887+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:39:01.886+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:39:01.898+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:39:32.110+0000] {processor.py:186} INFO - Started process (PID=19485) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:39:32.111+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:39:32.113+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:39:32.112+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:39:32.120+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:39:32.141+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:39:32.141+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:39:32.159+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:39:32.159+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:39:32.173+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.068 seconds
+[2024-09-21T00:40:02.386+0000] {processor.py:186} INFO - Started process (PID=19503) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:40:02.387+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:40:02.389+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:40:02.388+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:40:02.394+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:40:02.414+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:40:02.414+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:40:02.431+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:40:02.431+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:40:02.445+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.064 seconds
+[2024-09-21T00:40:32.658+0000] {processor.py:186} INFO - Started process (PID=19528) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:40:32.659+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:40:32.661+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:40:32.661+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:40:32.667+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:40:32.687+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:40:32.687+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:40:32.704+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:40:32.704+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:40:32.719+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:41:02.956+0000] {processor.py:186} INFO - Started process (PID=19546) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:41:02.960+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:41:02.962+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:41:02.962+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:41:02.968+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:41:02.989+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:41:02.989+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:41:03.006+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:41:03.006+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:41:03.018+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:41:33.249+0000] {processor.py:186} INFO - Started process (PID=19571) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:41:33.254+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:41:33.256+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:41:33.255+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:41:33.262+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:41:33.285+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:41:33.285+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:41:33.304+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:41:33.304+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:41:33.318+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.074 seconds
+[2024-09-21T00:42:03.556+0000] {processor.py:186} INFO - Started process (PID=19589) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:42:03.558+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:42:03.560+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:42:03.559+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:42:03.566+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:42:03.589+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:42:03.589+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:42:03.610+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:42:03.610+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:42:03.626+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.075 seconds
+[2024-09-21T00:42:33.855+0000] {processor.py:186} INFO - Started process (PID=19615) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:42:33.856+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:42:33.858+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:42:33.858+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:42:33.864+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:42:33.883+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:42:33.882+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:42:33.900+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:42:33.900+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:42:33.912+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.061 seconds
+[2024-09-21T00:43:04.163+0000] {processor.py:186} INFO - Started process (PID=19633) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:43:04.165+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:43:04.166+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:43:04.166+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:43:04.172+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:43:04.193+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:43:04.193+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:43:04.210+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:43:04.210+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:43:04.224+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:43:34.469+0000] {processor.py:186} INFO - Started process (PID=19658) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:43:34.472+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:43:34.474+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:43:34.474+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:43:34.480+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:43:34.502+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:43:34.502+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:43:34.520+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:43:34.519+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:43:34.531+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:44:04.759+0000] {processor.py:186} INFO - Started process (PID=19676) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:44:04.760+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:44:04.762+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:44:04.762+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:44:04.768+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:44:04.786+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:44:04.786+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:44:04.801+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:44:04.800+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:44:04.814+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.059 seconds
+[2024-09-21T00:44:35.045+0000] {processor.py:186} INFO - Started process (PID=19701) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:44:35.046+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:44:35.048+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:44:35.048+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:44:35.054+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:44:35.073+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:44:35.073+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:44:35.089+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:44:35.089+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:44:35.102+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.061 seconds
+[2024-09-21T00:45:05.341+0000] {processor.py:186} INFO - Started process (PID=19719) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:45:05.342+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:45:05.346+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:45:05.345+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:45:05.355+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:45:05.382+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:45:05.382+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:45:05.404+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:45:05.404+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:45:05.421+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.087 seconds
+[2024-09-21T00:45:35.628+0000] {processor.py:186} INFO - Started process (PID=19744) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:45:35.633+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:45:35.635+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:45:35.634+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:45:35.640+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:45:35.660+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:45:35.660+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:45:35.676+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:45:35.675+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:45:35.690+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:46:05.899+0000] {processor.py:186} INFO - Started process (PID=19762) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:46:05.903+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:46:05.905+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:46:05.905+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:46:05.911+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:46:05.930+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:46:05.930+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:46:05.946+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:46:05.946+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:46:05.960+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.066 seconds
+[2024-09-21T00:46:36.171+0000] {processor.py:186} INFO - Started process (PID=19787) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:46:36.172+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:46:36.174+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:46:36.174+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:46:36.180+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:46:36.199+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:46:36.199+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:46:36.216+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:46:36.216+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:46:36.228+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.062 seconds
+[2024-09-21T00:47:06.468+0000] {processor.py:186} INFO - Started process (PID=19805) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:47:06.469+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:47:06.470+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:47:06.470+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:47:06.481+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:47:06.505+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:47:06.505+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:47:06.526+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:47:06.526+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:47:06.538+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.076 seconds
+[2024-09-21T00:47:36.777+0000] {processor.py:186} INFO - Started process (PID=19831) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:47:36.782+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:47:36.785+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:47:36.784+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:47:36.791+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:47:36.815+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:47:36.815+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:47:36.832+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:47:36.832+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:47:36.847+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.076 seconds
+[2024-09-21T00:48:07.095+0000] {processor.py:186} INFO - Started process (PID=19849) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:48:07.100+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:48:07.102+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:48:07.102+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:48:07.108+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:48:07.127+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:48:07.127+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:48:07.142+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:48:07.142+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:48:07.155+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.064 seconds
+[2024-09-21T00:48:37.350+0000] {processor.py:186} INFO - Started process (PID=19874) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:48:37.355+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:48:37.358+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:48:37.358+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:48:37.363+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:48:37.384+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:48:37.384+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:48:37.400+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:48:37.400+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:48:37.412+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:49:07.628+0000] {processor.py:186} INFO - Started process (PID=19899) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:49:07.630+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:49:07.632+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:49:07.632+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:49:07.638+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:49:07.659+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:49:07.659+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:49:07.677+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:49:07.676+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:49:07.690+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.068 seconds
+[2024-09-21T00:49:37.911+0000] {processor.py:186} INFO - Started process (PID=19917) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:49:37.916+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:49:37.918+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:49:37.918+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:49:37.924+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:49:37.944+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:49:37.944+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:49:37.960+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:49:37.959+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:49:37.973+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:50:08.217+0000] {processor.py:186} INFO - Started process (PID=19942) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:50:08.218+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:50:08.220+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:50:08.220+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:50:08.226+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:50:08.247+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:50:08.246+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:50:08.264+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:50:08.264+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:50:08.276+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:50:38.526+0000] {processor.py:186} INFO - Started process (PID=19960) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:50:38.530+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:50:38.532+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:50:38.532+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:50:38.539+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:50:38.559+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:50:38.559+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:50:38.574+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:50:38.574+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:50:38.588+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:51:08.850+0000] {processor.py:186} INFO - Started process (PID=19986) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:51:08.858+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:51:08.861+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:51:08.861+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:51:08.869+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:51:08.896+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:51:08.896+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:51:08.926+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:51:08.926+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:51:08.943+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.099 seconds
+[2024-09-21T00:51:39.161+0000] {processor.py:186} INFO - Started process (PID=20004) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:51:39.162+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:51:39.164+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:51:39.163+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:51:39.170+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:51:39.188+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:51:39.188+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:51:39.203+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:51:39.203+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:51:39.215+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.058 seconds
+[2024-09-21T00:52:09.438+0000] {processor.py:186} INFO - Started process (PID=20029) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:52:09.440+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:52:09.442+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:52:09.441+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:52:09.448+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:52:09.471+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:52:09.471+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:52:09.488+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:52:09.487+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:52:09.500+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:52:39.756+0000] {processor.py:186} INFO - Started process (PID=20047) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:52:39.757+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:52:39.759+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:52:39.758+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:52:39.764+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:52:39.783+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:52:39.783+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:52:39.799+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:52:39.798+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:52:39.812+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.060 seconds
+[2024-09-21T00:53:10.059+0000] {processor.py:186} INFO - Started process (PID=20073) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:53:10.064+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:53:10.066+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:53:10.066+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:53:10.073+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:53:10.095+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:53:10.095+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:53:10.111+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:53:10.111+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:53:10.123+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.069 seconds
+[2024-09-21T00:53:40.376+0000] {processor.py:186} INFO - Started process (PID=20091) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:53:40.377+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:53:40.380+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:53:40.379+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:53:40.388+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:53:40.411+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:53:40.411+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:53:40.432+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:53:40.431+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:53:40.446+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.074 seconds
+[2024-09-21T00:54:10.653+0000] {processor.py:186} INFO - Started process (PID=20115) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:54:10.657+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:54:10.659+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:54:10.659+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:54:10.666+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:54:10.688+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:54:10.687+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:54:10.704+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:54:10.704+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:54:10.717+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.068 seconds
+[2024-09-21T00:54:40.967+0000] {processor.py:186} INFO - Started process (PID=20133) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:54:40.968+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:54:40.970+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:54:40.970+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:54:40.976+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:54:40.995+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:54:40.995+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:54:41.011+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:54:41.011+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:54:41.025+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.062 seconds
+[2024-09-21T00:55:11.263+0000] {processor.py:186} INFO - Started process (PID=20159) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:55:11.264+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:55:11.266+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:55:11.265+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:55:11.272+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:55:11.296+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:55:11.296+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:55:11.313+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:55:11.313+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:55:11.326+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:55:41.591+0000] {processor.py:186} INFO - Started process (PID=20177) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:55:41.593+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:55:41.595+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:55:41.595+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:55:41.602+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:55:41.624+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:55:41.624+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:55:41.641+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:55:41.641+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:55:41.654+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.067 seconds
+[2024-09-21T00:56:11.866+0000] {processor.py:186} INFO - Started process (PID=20202) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:56:11.867+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:56:11.869+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:56:11.869+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:56:11.875+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:56:11.896+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:56:11.896+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:56:11.911+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:56:11.911+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:56:11.926+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T00:56:42.143+0000] {processor.py:186} INFO - Started process (PID=20220) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:56:42.146+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:56:42.148+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:56:42.147+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:56:42.155+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:56:42.179+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:56:42.179+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:56:42.195+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:56:42.195+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:56:42.208+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.072 seconds
+[2024-09-21T00:57:12.382+0000] {processor.py:186} INFO - Started process (PID=20245) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:57:12.383+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:57:12.384+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:57:12.384+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:57:12.390+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:57:12.410+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:57:12.410+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:57:12.427+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:57:12.426+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:57:12.440+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.063 seconds
+[2024-09-21T00:57:42.627+0000] {processor.py:186} INFO - Started process (PID=20263) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:57:42.628+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:57:42.632+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:57:42.631+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:57:42.641+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:57:42.674+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:57:42.673+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:57:42.702+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:57:42.702+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:57:42.726+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.105 seconds
+[2024-09-21T00:58:12.931+0000] {processor.py:186} INFO - Started process (PID=20288) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:58:12.932+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:58:12.934+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:58:12.933+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:58:12.942+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:58:12.962+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:58:12.962+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:58:12.977+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:58:12.977+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:58:12.990+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.064 seconds
+[2024-09-21T00:58:43.197+0000] {processor.py:186} INFO - Started process (PID=20306) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:58:43.198+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:58:43.200+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:58:43.199+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:58:43.206+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:58:43.225+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:58:43.225+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:58:43.240+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:58:43.240+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:58:43.254+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.061 seconds
+[2024-09-21T00:59:13.454+0000] {processor.py:186} INFO - Started process (PID=20331) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:59:13.455+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:59:13.457+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:59:13.456+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:59:13.463+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:59:13.482+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:59:13.481+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:59:13.497+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:59:13.497+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:59:13.509+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.060 seconds
+[2024-09-21T00:59:43.690+0000] {processor.py:186} INFO - Started process (PID=20349) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:59:43.691+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T00:59:43.693+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:59:43.692+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:59:43.699+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T00:59:43.718+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:59:43.718+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T00:59:43.733+0000] {logging_mixin.py:190} INFO - [2024-09-21T00:59:43.733+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T00:59:43.745+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.059 seconds
+[2024-09-21T01:00:13.931+0000] {processor.py:186} INFO - Started process (PID=20375) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:00:13.936+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:00:13.938+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:00:13.937+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:00:13.943+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:00:13.965+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:00:13.965+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:00:13.987+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:00:13.987+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:00:14.001+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.074 seconds
+[2024-09-21T01:00:44.199+0000] {processor.py:186} INFO - Started process (PID=20393) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:00:44.200+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:00:44.205+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:00:44.205+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:00:44.215+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:00:44.248+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:00:44.248+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:00:44.265+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:00:44.265+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:00:44.279+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.088 seconds
+[2024-09-21T01:01:14.450+0000] {processor.py:186} INFO - Started process (PID=20418) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:01:14.455+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:01:14.457+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:01:14.457+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:01:14.463+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:01:14.484+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:01:14.484+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:01:14.502+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:01:14.502+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:01:14.519+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.073 seconds
+[2024-09-21T01:01:44.694+0000] {processor.py:186} INFO - Started process (PID=20436) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:01:44.695+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:01:44.697+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:01:44.696+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:01:44.702+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:01:44.721+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:01:44.721+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:01:44.737+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:01:44.737+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:01:44.749+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.060 seconds
+[2024-09-21T01:02:14.924+0000] {processor.py:186} INFO - Started process (PID=20461) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:02:14.925+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:02:14.927+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:02:14.927+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:02:14.934+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:02:14.955+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:02:14.955+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:02:14.974+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:02:14.973+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:02:14.988+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.068 seconds
+[2024-09-21T01:02:45.191+0000] {processor.py:186} INFO - Started process (PID=20479) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:02:45.192+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:02:45.195+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:02:45.194+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:02:45.202+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:02:45.227+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:02:45.227+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:02:45.245+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:02:45.245+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:02:45.261+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.076 seconds
+[2024-09-21T01:03:15.455+0000] {processor.py:186} INFO - Started process (PID=20504) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:03:15.457+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:03:15.459+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:03:15.458+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:03:15.468+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:03:15.492+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:03:15.492+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:03:15.513+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:03:15.513+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:03:15.527+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.077 seconds
+[2024-09-21T01:03:45.704+0000] {processor.py:186} INFO - Started process (PID=20522) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:03:45.705+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:03:45.707+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:03:45.706+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:03:45.714+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:03:45.740+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:03:45.739+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:03:45.759+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:03:45.758+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:03:45.773+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.074 seconds
+[2024-09-21T01:04:16.007+0000] {processor.py:186} INFO - Started process (PID=20547) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:04:16.009+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:04:16.012+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:04:16.011+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:04:16.039+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:04:16.095+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:04:16.094+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:04:16.123+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:04:16.123+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:04:16.141+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.177 seconds
+[2024-09-21T01:04:46.346+0000] {processor.py:186} INFO - Started process (PID=20565) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:04:46.348+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:04:46.350+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:04:46.350+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:04:46.357+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:04:46.380+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:04:46.380+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:04:46.398+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:04:46.397+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:04:46.410+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.069 seconds
+[2024-09-21T01:05:17.603+0000] {processor.py:186} INFO - Started process (PID=20590) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:05:17.605+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:05:17.609+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:05:17.608+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:05:17.621+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:05:17.710+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:05:17.710+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:05:17.782+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:05:17.781+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:05:17.821+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.225 seconds
+[2024-09-21T01:05:48.030+0000] {processor.py:186} INFO - Started process (PID=20606) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:05:48.031+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:05:48.033+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:05:48.032+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:05:48.039+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:05:48.058+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:05:48.058+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:05:48.074+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:05:48.074+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:05:48.087+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.062 seconds
+[2024-09-21T01:06:18.261+0000] {processor.py:186} INFO - Started process (PID=20631) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:06:18.262+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:06:18.264+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:06:18.263+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:06:18.270+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:06:18.292+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:06:18.292+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:06:18.311+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:06:18.310+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:06:18.326+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.071 seconds
+[2024-09-21T01:06:48.531+0000] {processor.py:186} INFO - Started process (PID=20648) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:06:48.532+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:06:48.534+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:06:48.534+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:06:48.540+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:06:48.560+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:06:48.560+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:06:48.577+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:06:48.577+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:06:48.590+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.064 seconds
+[2024-09-21T01:07:18.780+0000] {processor.py:186} INFO - Started process (PID=20673) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:07:18.781+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:07:18.782+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:07:18.782+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:07:18.789+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:07:18.816+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:07:18.815+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:07:18.844+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:07:18.843+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:07:18.865+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.090 seconds
+[2024-09-21T01:07:49.119+0000] {processor.py:186} INFO - Started process (PID=20691) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:07:49.120+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:07:49.122+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:07:49.122+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:07:49.128+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:07:49.148+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:07:49.148+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:07:49.165+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:07:49.164+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:07:49.178+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.063 seconds
+[2024-09-21T01:08:19.379+0000] {processor.py:186} INFO - Started process (PID=20716) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:08:19.380+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:08:19.382+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:08:19.382+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:08:19.389+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:08:19.413+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:08:19.413+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:08:19.434+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:08:19.434+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:08:19.452+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.078 seconds
+[2024-09-21T01:08:50.063+0000] {processor.py:186} INFO - Started process (PID=20735) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:08:50.068+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:08:50.069+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:08:50.069+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:08:50.076+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:08:50.097+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:08:50.097+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:08:50.114+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:08:50.114+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:08:50.127+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.069 seconds
+[2024-09-21T01:09:20.376+0000] {processor.py:186} INFO - Started process (PID=20759) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:09:20.378+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:09:20.387+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:09:20.386+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:09:20.401+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:09:20.465+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:09:20.465+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:09:20.513+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:09:20.513+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:09:20.546+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.198 seconds
+[2024-09-21T01:09:50.607+0000] {processor.py:186} INFO - Started process (PID=20776) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:09:50.608+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:09:50.610+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:09:50.610+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:09:50.617+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:09:50.636+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:09:50.636+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:09:50.652+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:09:50.652+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:09:50.665+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.062 seconds
+[2024-09-21T01:10:20.902+0000] {processor.py:186} INFO - Started process (PID=20803) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:10:20.904+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:10:20.908+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:10:20.907+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:10:20.916+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:10:20.942+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:10:20.942+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:10:20.967+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:10:20.967+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:10:20.984+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.088 seconds
+[2024-09-21T01:10:51.269+0000] {processor.py:186} INFO - Started process (PID=20822) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:10:51.270+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:10:51.272+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:10:51.272+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:10:51.279+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:10:51.303+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:10:51.303+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:10:51.324+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:10:51.323+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:10:51.336+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.072 seconds
+[2024-09-21T01:11:21.569+0000] {processor.py:186} INFO - Started process (PID=20847) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:11:21.570+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:11:21.573+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:11:21.573+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:11:21.581+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:11:21.610+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:11:21.609+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:11:21.635+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:11:21.635+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:11:21.662+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.098 seconds
+[2024-09-21T01:11:51.958+0000] {processor.py:186} INFO - Started process (PID=20865) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:11:51.959+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:11:51.960+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:11:51.960+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:11:51.967+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:11:51.987+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:11:51.986+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:11:52.002+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:11:52.002+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:11:52.015+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.061 seconds
+[2024-09-21T01:12:22.235+0000] {processor.py:186} INFO - Started process (PID=20883) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:12:22.236+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:12:22.238+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:12:22.238+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:12:22.246+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:12:22.269+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:12:22.269+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:12:22.290+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:12:22.290+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:12:22.309+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.079 seconds
+[2024-09-21T01:12:52.511+0000] {processor.py:186} INFO - Started process (PID=20907) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:12:52.512+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:12:52.514+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:12:52.514+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:12:52.524+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:12:52.552+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:12:52.552+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:12:52.569+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:12:52.569+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:12:52.581+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.075 seconds
+[2024-09-21T01:13:22.873+0000] {processor.py:186} INFO - Started process (PID=20925) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:13:22.874+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:13:22.876+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:13:22.876+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:13:22.888+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:13:22.920+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:13:22.919+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:13:22.951+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:13:22.951+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:13:22.976+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.108 seconds
+[2024-09-21T01:13:53.262+0000] {processor.py:186} INFO - Started process (PID=20950) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:13:53.263+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:13:53.265+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:13:53.264+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:13:53.274+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:13:53.297+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:13:53.297+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:13:53.317+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:13:53.317+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:13:53.335+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.077 seconds
+[2024-09-21T01:14:23.539+0000] {processor.py:186} INFO - Started process (PID=20968) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:14:23.540+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:14:23.542+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:14:23.542+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:14:23.548+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:14:23.572+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:14:23.571+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:14:23.595+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:14:23.594+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:14:23.618+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.084 seconds
+[2024-09-21T01:14:53.873+0000] {processor.py:186} INFO - Started process (PID=20993) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:14:53.873+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:14:53.875+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:14:53.875+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:14:53.881+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:14:53.903+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:14:53.903+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:14:53.921+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:14:53.921+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:14:53.933+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T01:15:24.203+0000] {processor.py:186} INFO - Started process (PID=21012) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:15:24.204+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:15:24.206+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:15:24.206+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:15:24.212+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:15:24.231+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:15:24.231+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:15:24.249+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:15:24.249+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:15:24.263+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.065 seconds
+[2024-09-21T01:15:54.551+0000] {processor.py:186} INFO - Started process (PID=21037) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:15:54.552+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:15:54.554+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:15:54.554+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:15:54.560+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:15:54.581+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:15:54.581+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:15:54.597+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:15:54.596+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:15:54.609+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.063 seconds
+[2024-09-21T01:17:13.186+0000] {processor.py:186} INFO - Started process (PID=46) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:17:13.188+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:17:13.195+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:17:13.194+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:17:13.216+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:17:13.266+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:17:13.266+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:17:13.305+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:17:13.304+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:17:13.339+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.172 seconds
+[2024-09-21T01:17:43.740+0000] {processor.py:186} INFO - Started process (PID=71) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:17:43.741+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:17:43.743+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:17:43.743+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:17:43.754+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:17:43.785+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:17:43.784+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:17:43.818+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:17:43.817+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:17:43.834+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.100 seconds
+[2024-09-21T01:18:14.063+0000] {processor.py:186} INFO - Started process (PID=89) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:18:14.064+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:18:14.066+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:18:14.065+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:18:14.074+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:18:14.099+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:18:14.099+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:18:14.119+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:18:14.119+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:18:14.133+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.074 seconds
+[2024-09-21T01:18:44.482+0000] {processor.py:186} INFO - Started process (PID=114) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:18:44.483+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:18:44.484+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:18:44.484+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:18:44.491+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:18:44.514+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:18:44.514+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:18:44.532+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:18:44.532+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:18:44.544+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.068 seconds
+[2024-09-21T01:19:14.861+0000] {processor.py:186} INFO - Started process (PID=132) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:19:14.862+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:19:14.863+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:19:14.863+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:19:14.869+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:19:14.889+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:19:14.889+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:19:14.905+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:19:14.905+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:19:14.916+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.060 seconds
+[2024-09-21T01:19:45.249+0000] {processor.py:186} INFO - Started process (PID=156) to work on /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:19:45.250+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/sample_dag.py for tasks to queue
+[2024-09-21T01:19:45.251+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:19:45.251+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:19:45.257+0000] {processor.py:925} INFO - DAG(s) 'xcom_guess' retrieved from /opt/airflow/dags/sample_dag.py
+[2024-09-21T01:19:45.282+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:19:45.281+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-21T01:19:45.299+0000] {logging_mixin.py:190} INFO - [2024-09-21T01:19:45.299+0000] {dag.py:4156} INFO - Setting next_dagrun for xcom_guess to 2023-03-04 10:35:00+00:00, run_after=2023-03-04 10:40:00+00:00
+[2024-09-21T01:19:45.313+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/sample_dag.py took 0.069 seconds

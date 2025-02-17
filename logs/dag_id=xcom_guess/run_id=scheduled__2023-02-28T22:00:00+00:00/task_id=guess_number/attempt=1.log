@@ -1,0 +1,42 @@
+[2024-05-23T17:52:59.426+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-23T17:52:59.475+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: xcom_guess.guess_number scheduled__2023-02-28T22:00:00+00:00 [queued]>
+[2024-05-23T17:52:59.496+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: xcom_guess.guess_number scheduled__2023-02-28T22:00:00+00:00 [queued]>
+[2024-05-23T17:52:59.497+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-23T17:52:59.531+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): guess_number> on 2023-02-28 22:00:00+00:00
+[2024-05-23T17:52:59.542+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=3046) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-23T17:52:59.545+0000] {standard_task_runner.py:63} INFO - Started process 3053 to run task
+[2024-05-23T17:52:59.546+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'xcom_guess', 'guess_number', 'scheduled__2023-02-28T22:00:00+00:00', '--job-id', '1112', '--raw', '--subdir', 'DAGS_FOLDER/sample_dag.py', '--cfg-path', '/tmp/tmpl203z_v4']
+[2024-05-23T17:52:59.549+0000] {standard_task_runner.py:91} INFO - Job 1112: Subtask guess_number
+[2024-05-23T17:52:59.582+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-05-23T17:52:59.665+0000] {task_command.py:426} INFO - Running <TaskInstance: xcom_guess.guess_number scheduled__2023-02-28T22:00:00+00:00 [running]> on host 88d46e04e9cd
+[2024-05-23T17:52:59.895+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='xcom_guess' AIRFLOW_CTX_TASK_ID='guess_number' AIRFLOW_CTX_EXECUTION_DATE='2023-02-28T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-02-28T22:00:00+00:00'
+[2024-05-23T17:52:59.896+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-23T17:52:59.950+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-23T17:52:59.974+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/sample_dag.py", line 19, in guess_number
+    raise AirflowException(f"Wrong guess! Number: {number}, guess: {guess}")
+airflow.exceptions.AirflowException: Wrong guess! Number: 8, guess: 7
+[2024-05-23T17:52:59.984+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=xcom_guess, task_id=guess_number, run_id=scheduled__2023-02-28T22:00:00+00:00, execution_date=20230228T220000, start_date=20240523T175259, end_date=20240523T175259
+[2024-05-23T17:53:00.017+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 1112 for task guess_number (Wrong guess! Number: 8, guess: 7; 3053)
+[2024-05-23T17:53:00.043+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-23T17:53:00.064+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

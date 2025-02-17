@@ -34,7 +34,8 @@ create table if not exists "user" (
 	user_created_at timestamp,
 	company text,
 	vanity_url text,
-	manager text
+	manager text,
+	isActive bool
 );
 
 create table if not exists meeting (
@@ -62,7 +63,7 @@ create table if not exists meeting (
 	"source" text,
 	constraint fk_user
 		foreign Key(host_id)
-			references "user"(id),
+			references "user"(id)
 );
 
 create table if not exists participant (
@@ -95,6 +96,7 @@ create table if not exists recording (
 	file_size bigint,
 	download_link text,
 	recording_type text,
+	s3_id text,
 	constraint fk_meeting
 		foreign key(meeting_id)
 			references meeting("uuid"),
