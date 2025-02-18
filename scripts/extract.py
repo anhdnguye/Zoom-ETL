@@ -12,6 +12,7 @@ class DataExtractor:
     @token_manager.token_required
     def get_all_user_ids(self, token=None):
         """Get all user IDs from the API."""
+        user_email = []
         try:
             headers = {
                 'Authorization': f'Bearer {token}',
@@ -19,11 +20,19 @@ class DataExtractor:
             }
             
             url = f"{self.base_url}/users"
-            response = requests.get(url, headers=headers)
+            params = {
+                'page_size' : 300,
+                'status' : 'active'
+            }
+            response = requests.get(url, headers=headers, params=params)
             response.raise_for_status()
             
             users = response.json()
-            return [user['id'] for user in users]
+            if users['next_page_token']:
+                user_email.extend(self.get_all_user_ids(self, token=None))
+            else:
+                return [(user['email']) for user in response['users']]
+            
         except requests.exceptions.RequestException as e:
             logging.error(f"Error getting user IDs: {e}")
             raise
