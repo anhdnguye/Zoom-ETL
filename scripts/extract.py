@@ -1,7 +1,7 @@
 import requests
 import logging
 from datetime import datetime
-from auth import token_manager
+from oauth import token_manager
 from airflow.models import Variable
 
 class DataExtractor:
