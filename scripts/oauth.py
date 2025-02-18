@@ -1,10 +1,13 @@
+import os
 import requests
-import time
+import base64
 import threading
 import logging
 from datetime import datetime, timedelta
-from airflow.models import Variable
 from functools import wraps
+
+from dotenv import load_dotenv
+load_dotenv()
 
 class TokenManager:
     def __init__(self, token_endpoint, client_id_var, client_secret_var):
@@ -18,16 +21,15 @@ class TokenManager:
     def _refresh_token(self):
         """Refresh the API token using client credentials."""
         try:
-            client_id = Variable.get(self.client_id_var)
-            client_secret = Variable.get(self.client_secret_var)
+            key = f"{self.client_id_var}:{self.client_secret_var}"
+            encodedBytes = base64.b64encode(key.encode('utf-8'))
+            auth = str(encodedBytes, "utf-8")
             
-            payload = {
-                'grant_type': 'client_credentials',
-                'client_id': client_id,
-                'client_secret': client_secret
+            header = {
+                'Authorization' : f"Basic {auth}"
             }
             
-            response = requests.post(self.token_endpoint, data=payload)
+            response = requests.post(self.token_endpoint, headers=header)
             response.raise_for_status()
             
             token_data = response.json()
@@ -59,8 +61,10 @@ class TokenManager:
         return wrapper
 
 # Initialize the token manager (replace with your actual token endpoint)
+account_ID = os.getenv('account_ID')
+refresh_endpoint = f'https://zoom.us/oauth/token?grant_type=account_credentials&account_id={account_ID}'
 token_manager = TokenManager(
-    token_endpoint="https://api.example.com/oauth/token",
-    client_id_var="API_CLIENT_ID",
-    client_secret_var="API_CLIENT_SECRET"
+    token_endpoint=refresh_endpoint,
+    client_id_var=os.getenv('Client_ID'),
+    client_secret_var=os.getenv('Client_Secret')
 )

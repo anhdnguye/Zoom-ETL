@@ -2,7 +2,6 @@
 airflow.cfg
 keys.json
 *.ipynb
-webserver_config.py
 postgres-db-volume
 zoom-db-volume
 airflow-webserver.pid
@@ -10,3 +9,4 @@ airflow-webserver.pid
 .vs/
 .idea/
 .DS_Store
+testing_files
