@@ -41,10 +41,11 @@ def etl_process():
         return extractor.get_all_user_ids()
     
     @task
-    def get_user_info(**kwargs):
+    def get_user_info(user_id):
         """Task to get user information"""
         extractor = DataExtractor('https://api.zoom.us/v2')
-        return extractor.get_user_details()
+        user_details = extractor.get_user_details(user_id)
+        return {"user_id": user_id, "detail": user_details}
     
     @task
     def get_last_run_timestamp():

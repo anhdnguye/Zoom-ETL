@@ -13,29 +13,29 @@ class DataExtractor:
     def get_all_user_ids(self, token=None):
         """Get all user IDs from the API."""
         user_email = []
-        try:
-            headers = {
-                'Authorization': f'Bearer {token}',
-                'Content-Type': 'application/json'
-            }
-            
-            url = f"{self.base_url}/users"
-            params = {
-                'page_size' : 300,
-                'status' : 'active'
-            }
-            response = requests.get(url, headers=headers, params=params)
-            response.raise_for_status()
-            
-            users = response.json()
-            if users['next_page_token']:
-                user_email.extend(self.get_all_user_ids(self, token=None))
-            else:
-                return [(user['email']) for user in response['users']]
-            
-        except requests.exceptions.RequestException as e:
-            logging.error(f"Error getting user IDs: {e}")
-            raise
+        for status in {'active', 'inactive'}:
+            try:
+                headers = {
+                    'Authorization': f'Bearer {token}',
+                    'Content-Type': 'application/json'
+                }
+                
+                url = f"{self.base_url}/users"
+                params = {
+                    'page_size' : 300,
+                    'status' : status,
+                }
+                response = requests.get(url, headers=headers, params=params)
+                response.raise_for_status()
+                
+                users = response.json()
+                if users['next_page_token']:
+                    user_email.extend(self.get_all_user_ids(self, token=users['next_page_token']))
+                return user_email.extend([(user['email']) for user in response['users']])
+                
+            except requests.exceptions.RequestException as e:
+                logging.error(f"Error getting user IDs: {e}")
+                raise
     
     @token_manager.token_required
     def get_user_details(self, user_id, token=None):
