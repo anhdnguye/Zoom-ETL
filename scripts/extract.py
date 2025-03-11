@@ -1,47 +1,67 @@
 import requests
 import logging
 from datetime import datetime, timedelta
+import time
+from typing import List, Dict, Optional, Generator
+from requests.exceptions import RequestException
 from oauth import token_manager
 from airflow.models import Variable
+from urllib.parse import quote
+from requests.exceptions import HTTPError
 
 class DataExtractor:
     def __init__(self, base_url):
-        self.base_url = base_url
+        self.base_url = base_url.rstrip('/')
         self.token_manager = token_manager
-    
-    @token_manager.token_required
-    def get_all_user_ids(self, token=None):
-        """Get all user IDs from the API."""
-        user_email = []
-        for _status in {'active', 'inactive'}:
+        self.logger = logging.getLogger(__name__)
+        self.DEFAULT_PAGE_SIZE = 300
+
+    def _make_paginated_request(self, url: str, headers: Dict, params: Dict = None) -> Generator[Dict, None, None]:
+        """Helper method to handle paginated API requests."""
+        params = params or {}
+        while True:
             try:
-                headers = {
-                    'Authorization': f'Bearer {token}',
-                    'Content-Type': 'application/json'
-                }
+                response = requests.get(url, headers=headers, params=params)
+                if response.status_code == 429:  # Too Many Requests
+                    retry_after = int(response.headers.get('Retry-After', 60))
+                    self.logger.warning(f"Rate limit hit, retrying after {retry_after} seconds")
+                    time.sleep(retry_after)
+                    continue
+                response.raise_for_status()
+                response.raise_for_status()
+                data = response.json()
+                yield data
                 
-                url = f"{self.base_url}/users"
-                params = {
-                    'page_size' : 300,
-                    'status' : _status,
-                }
-                while True:
-                    response = requests.get(url, headers=headers, params=params)
-                    response.raise_for_status()
-                    
-                    users = response.json()
-                    user_email.extend([user['email'] for user in users['users']])
-                    if not users['next_page_token']:
-                        break
-                    params['next_page_token'] = users['next_page_token']
-                
-            except requests.exceptions.RequestException as e:
-                logging.error(f"Error getting user IDs: {e}")
+                if not data.get('next_page_token'):
+                    break
+                params['next_page_token'] = data['next_page_token']
+            except RequestException as e:
+                self.logger.error(f"API request failed for {url}: {e}")
                 raise
-        return user_email
+
+    @token_manager.token_required
+    def get_all_user_ids(self, token: Optional[str] = None) -> List[str]:
+        """Get all user IDs from the API."""
+        user_emails = []
+        for _status in {'active', 'inactive'}:
+            headers = {
+                'Authorization' : f'Bearer {token}',
+                'Content-Type': 'application/json'
+            }
+
+            url = f"{self.base_url}/users"
+            params = {
+                'page_size' : self.DEFAULT_PAGE_SIZE,
+                'status' : _status
+            }
+
+            for page in self._make_paginated_request(url, headers, params):
+                user_emails.extend(user['email'] for user in page.get('users', []))
+            
+        return list(set(user_emails))
     
     @token_manager.token_required
-    def get_user_details(self, user_id, token=None):
+    def get_user_details(self, user_id: str, token: Optional[str]=None) -> Dict:
         """Get details for a specific user."""
         try:
             headers = {
@@ -53,12 +73,12 @@ class DataExtractor:
             response = requests.get(url, headers=headers)
             response.raise_for_status()
             return response.json()
-        except requests.exceptions.RequestException as e:
-            logging.error(f"Error getting user details for {user_id}: {e}")
+        except RequestException as e:
+            self.logger.error(f"Error getting user details for {user_id}: {e}")
             raise
     
-    # Get the time range
-    def getRange(self, start, end):
+    def getRange(self, start: datetime, end: datetime) -> Generator[tuple[datetime, datetime], None, None]:
+        """Generate date ranges in 30-day chunks."""
         curr = start
         date_difference = timedelta(days=30)
         while curr < end:
@@ -66,63 +86,97 @@ class DataExtractor:
             curr += date_difference
 
     @token_manager.token_required
-    def get_meetings(self, user_id, since_timestamp, token=None):
-        """Get meetings for a user since the specified timestamp. Use /report/users/{userId}/meetings"""
+    def get_meetings(self, user_id: str, since_timestamp: datetime, token: Optional[str]=None) -> List[str]:
+        """Get meetings for a user since the specified timestamp."""
+        url = f"{self.base_url}/report/users/{user_id}/meetings"
+
         lstMeetings = []
+        for start, end in self.getRange(since_timestamp, datetime.today()):
+            headers = {
+                'Authorization': f'Bearer {token}',
+                'Content-Type': 'application/json'
+            }
+
+            params = {
+                'from': start.strftime('%Y-%m-%d'),
+                'to':end.strftime('%Y-%m-%d'),
+                'page_size': self.DEFAULT_PAGE_SIZE
+            }
+
+            for page in self._make_paginated_request(url, headers, params):
+                lstMeetings.extend(meeting['uuid'] for meeting in page.get('meetings', []))
+        return lstMeetings
+
+    @token_manager.token_required
+    def get_meeting_details(self, meeting_id: str, token: Optional[str]=None) -> Dict:
+        """Get details for a specific meeting using both metrics and meetings endpoints."""
+        headers = {
+            'Authorization': f'Bearer {token}',
+            'Content-Type': 'application/json'
+        }
+        encoded_meeting_id = quote(meeting_id, safe='')
+        combined_details = {}
+        endpoints = [
+            f"{self.base_url}/metrics/meetings/{encoded_meeting_id}",
+            f"{self.base_url}/meetings/{encoded_meeting_id}"
+        ]
+
+        for url in endpoints:
+            try:
+                for data in self._make_paginated_request(url, headers):
+                    combined_details.update(data)
+            except RequestException as e:
+                self.logger.error(f"Failed to get meeting details from {url}: {e}")
+                continue
+
+        return combined_details
+
+    @token_manager.token_required
+    def get_meeting_participants(self, meeting_id: str, token: Optional[str]=None) -> List[Dict]:
+        """Get a list of participants of a meeting."""
+        headers = {
+            'Authorization': f'Bearer {token}',
+            'Content-Type': 'application/json'
+        }
+        
+        encoded_meeting_id = quote(meeting_id, safe='')
+        url = f"{self.base_url}/metrics/meetings/{encoded_meeting_id}/participants"
+        params = {'page_size': self.DEFAULT_PAGE_SIZE}
+        
+        participants = []
+        for page in self._make_paginated_request(url, headers, params):
+            participants.extend(page.get('participants', []))
+
+        return participants
+
+    @token_manager.token_required
+    def get_meeting_recordings(self, meeting_id: str, token: Optional[str]=None) -> Dict:
+        """Get the recordings of a meeting."""
         try:
             headers = {
                 'Authorization': f'Bearer {token}',
                 'Content-Type': 'application/json'
             }
-            
-            url = f"{self.base_url}/report/users/{user_id}/meetings"
-            for start, end in self.getRange(since_timestamp, datetime.today()):    
-                params = {
-                    'from': start.strftime('%Y-%m-%d'),
-                    'to':end.strftime('%Y-%m-%d'),
-                }
-                while True:
-                    response = requests.get(url, headers=headers, params=params)
-                    response.raise_for_status()
 
-                    meetings = response.json()
-                    lstMeetings.extend([meeting['uuid'] for meeting in meetings['meetings']])
-                    if not meetings['next_page_token']:
-                        break
-                    params['next_page_token'] = meetings['next_page_token']
-
-        except requests.exceptions.RequestException as e:
-            logging.error(f"Error getting meetings for user {user_id}: {e}")
+            encoded_meeting_id = quote(meeting_id, safe='')
+            url = f"{self.base_url}/meetings/{encoded_meeting_id}/recordings"
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()
+            return response.json()
+        except RequestException as e:
+            self.logger.error(f"Error getting recording details for {encoded_meeting_id}: {e}")
             raise
-        return lstMeetings
 
-    @token_manager.token_required
-    def get_meeting_details(self, meeting_id, token=None):
-        """Get details for a specific meeting"""
-        pass
-
-    @token_manager.token_required
-    def get_meeting_participants(self, meeting_id, token=None):
-        """Get a list of participants of a meeting"""
-        pass
-
-    @token_manager.token_required
-    def get_meeting_recordings(self, meeting_id, token=None):
-        """Get the recordings of a meeting"""
-        pass
-
-    def get_last_run_timestamp(self):
+    def get_last_run_timestamp(self) -> str:
         """Get the timestamp of the last pipeline run."""
         try:
             last_run = Variable.get("last_pipeline_run", default_var=None)
-            if last_run:
-                return last_run
-            return datetime.now().isoformat()
+            return last_run if last_run else datetime.now().isoformat()
         except Exception as e:
             logging.error(f"Error getting last run timestamp: {e}")
             return datetime.now().isoformat()
 
-    def set_last_run_timestamp(self):
+    def set_last_run_timestamp(self) -> None:
         """Set the current timestamp as the last pipeline run."""
         try:
             Variable.set("last_pipeline_run", datetime.now().isoformat())
