@@ -54,6 +54,7 @@ create table if not exists meeting (
 	join_url text,
 	"password" text,
 	auto_recording text,
+	recording_count int,
 	"uuid" text not null primary key, -- Meeting id
 	start_time timestamp,
 	end_time timestamp,
