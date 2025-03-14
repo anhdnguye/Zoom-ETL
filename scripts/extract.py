@@ -7,7 +7,10 @@ from requests.exceptions import RequestException
 from oauth import token_manager
 from airflow.models import Variable
 from urllib.parse import quote
-from requests.exceptions import HTTPError
+import tempfile
+
+import boto3
+from botocore.exceptions import ClientError
 
 class DataExtractor:
     def __init__(self, base_url):
@@ -86,7 +89,12 @@ class DataExtractor:
             curr += date_difference
 
     @token_manager.token_required
-    def get_meetings(self, user_id: str, since_timestamp: datetime, token: Optional[str]=None) -> List[str]:
+    def get_meetings(
+        self,
+        user_id: str,
+        since_timestamp: datetime,
+        token: Optional[str]=None
+    ) -> List[str]:
         """Get meetings for a user since the specified timestamp."""
         url = f"{self.base_url}/report/users/{user_id}/meetings"
 
@@ -140,7 +148,7 @@ class DataExtractor:
         }
         
         encoded_meeting_id = quote(meeting_id, safe='')
-        url = f"{self.base_url}/metrics/meetings/{encoded_meeting_id}/participants"
+        url = f"{self.base_url}/past_meetings/{encoded_meeting_id}/participants"
         params = {'page_size': self.DEFAULT_PAGE_SIZE}
         
         participants = []
@@ -165,6 +173,77 @@ class DataExtractor:
             return response.json()
         except RequestException as e:
             self.logger.error(f"Error getting recording details for {encoded_meeting_id}: {e}")
+            raise
+
+    @token_manager.token_required
+    def download_meeting_recordings(
+        self,
+        download_url: str,
+        uuid: str,
+        topic: str,
+        file_extension: str,
+        token: Optional[str]=None
+    ) -> str:
+        """Download the recording and upload to S3"""
+        try:
+            s3_client = boto3.client('s3')
+            bucket_name = Variable.get("S3_BUCKET_NAME")
+
+            # Construct S3 key (path) for the recording
+            # s3_key = f"recordings/{topic}/{file_id}.{file_type.lower()}"
+            s3_key = f"{uuid}/{topic}.{file_extension}"
+            s3_url = f"s3://{bucket_name}/{s3_key}"
+
+            headers = {
+                'Authorization': f'Bearer {token}',
+                'Content-Type': 'application/json'
+            }
+
+            self.logger.info(f"Starting download of recording {uuid} from {download_url}")
+            with requests.get(download_url, headers=headers, stream=True) as response:
+                response.raise_for_status()
+
+                # Use a temporary file to store the downloaded content
+                with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+                    # Download in chunks (1MB) for memory efficiency
+                    chunk_size = 1024 * 1024  # 1MB
+                    for chunk in response.iter_content(chunk_size=chunk_size):
+                        if chunk:  # Filter out keep-alive chunks
+                            temp_file.write(chunk)
+                    temp_file_path = temp_file.name
+
+            # Upload the temporary file to S3
+            self.logger.info(f"Uploading recording {uuid} to S3: {s3_url}")
+
+            try:
+                s3_client.upload_file(
+                    Filename=temp_file_path,
+                    Bucket=bucket_name,
+                    Key=s3_key,
+                    ExtraArgs={
+                        'ContentType': file_extension,
+                        'ServerSideEncryption': 'AES256'  # Enable server-side encryption
+                    }
+                )
+            finally:
+                # Clean up the temporary file
+                os.unlink(temp_file_path)
+            
+            # Verify the upload by checking if the object exists
+            s3_client.head_object(Bucket=bucket_name, Key=s3_key)
+            self.logger.info(f"Successfully uploaded recording {uuid} to {s3_url}")
+
+            # Return the S3 URL for database storage
+            return s3_url
+
+        except RequestException as e:
+            self.logger.error(f"Failed to download recording {uuid} from Zoom: {e}")
+            raise
+        except ClientError as e:
+            self.logger.error(f"Failed to upload recording {uuid} to S3: {e}")
+            raise
+        except Exception as e:
+            self.logger.error(f"Unexpected error for recording {uuid}: {e}")
             raise
 
     def get_last_run_timestamp(self) -> str:
