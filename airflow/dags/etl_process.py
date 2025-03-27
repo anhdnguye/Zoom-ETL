@@ -3,23 +3,24 @@ from airflow.operators.dummy import DummyOperator
 
 import os
 from datetime import datetime, timedelta
-import sys
-import json
 from typing import List, Dict
 
 import sys
 sys.path.insert(1, '/opt/airflow/scripts')
 from extract import DataExtractor
+from load import DataLoader
 
 from dotenv import load_dotenv
 load_dotenv()
 
-# database credential
-HOST_NAME = os.getenv('ZOOM_HOST_NAME')
-DATABASE = os.getenv('ZOOM_DATABASE')
-USER_NAME = os.getenv('ZOOM_USER')
-PASSWORD = os.getenv('ZOOM_PASS')
-PORT_ID = 5432
+# Connection parameters for DataLoader
+connection_params = {
+    "host": os.getenv('ZOOM_HOST_NAME'),
+    "dbname": os.getenv('ZOOM_DATABASE'),
+    "user": os.getenv('ZOOM_USER'),
+    "password": os.getenv('ZOOM_PASS'),
+    "port": 5432
+}
 
 default_args={
     'owner': 'Anh',
@@ -94,6 +95,35 @@ def etl_process():
         extractor = DataExtractor('https://api.zoom.us/v2')
         return extractor.set_last_run_timestamp()
     
+    @task
+    def load_users(user_infos: List[Dict]) -> None:
+        """Task to load user data into the database."""
+        loader = DataLoader(connection_params)
+        with loader:
+            users = [user_info["details"] for user_info in user_infos]
+            loader.load_users(users)
+
+    @task
+    def load_meetings(meeting_details_tasks: List[Dict]) -> None:
+        """Task to load meeting data into the database."""
+        loader = DataLoader(connection_params)
+        with loader:
+            meetings = [meeting["details"] for meeting in meeting_details_tasks]
+            loader.load_meetings(meetings)
+
+    @task
+    def load_participants(meeting_participants_tasks: List[Dict]) -> None:
+        """Task to load participant data into the database."""
+        loader = DataLoader(connection_params)
+        with loader:
+            participants = []
+            for meeting_participants in meeting_participants_tasks:
+                meeting_id = meeting_participants["meeting_id"]
+                for participant in meeting_participants["participants"]:
+                    participant["meeting_uuid"] = meeting_id
+                    participants.append(participant)
+            loader.load_participants(participants)
+    
     start = DummyOperator(task_id='start')
     end = DummyOperator(task_id='end')
 
@@ -124,6 +154,11 @@ def etl_process():
             
             meeting_details_tasks.append(meeting_details)
             meeting_participants_tasks.append(meeting_participants)
+    
+    # Load data into the database
+    load_users_task = load_users(user_infos)
+    load_meetings_task = load_meetings(meeting_details_tasks)
+    load_participants_task = load_participants(meeting_participants_tasks)
 
     # Set last run timestamp after all processing is complete
     set_last_run = set_last_run_timestamp()
@@ -136,8 +171,13 @@ def etl_process():
     # Ensure meeting details and participants are processed after meetings are fetched
     user_meetings >> meeting_details_tasks
     user_meetings >> meeting_participants_tasks
+
+    # Load data after extraction
+    user_infos >> load_users_task
+    meeting_details_tasks >> load_meetings_task
+    meeting_participants_tasks >> load_participants_task
     
     # Final dependency chain
-    [user_infos, meeting_details_tasks, meeting_participants_tasks] >> set_last_run >> end
+    [load_users_task, load_meetings_task, load_participants_task] >> set_last_run >> end
 
 etl_process()
