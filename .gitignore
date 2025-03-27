@@ -10,5 +10,6 @@ webserver_config.py
 .vs/
 .idea/
 .DS_Store
-unit_test/
 logs/
+unit_test
+testing_files
