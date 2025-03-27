@@ -9,4 +9,5 @@ airflow-webserver.pid
 .vs/
 .idea/
 .DS_Store
-unit_test
+unit_test/
+logs/
