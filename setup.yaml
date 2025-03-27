@@ -8,20 +8,20 @@ dependencies:
     - python
     - pip
     - jupyter
-    - scikit-learn
-    - scipy
     - pandas
     - pandas-datareader
-    - matplotlib
     - pillow
     - tqdm
     - requests
     - h5py
     - pyyaml
-    - flask
     - boto3
     - ipykernel
     - openjdk
     - pyspark
     - psycopg2
+    - psycopg2-binary
     - python-dotenv
+    - pytest
+    - pytest-mock
+    - requests-mock
