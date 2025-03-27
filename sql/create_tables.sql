@@ -1,8 +1,8 @@
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- Create the user table
-CREATE TABLE "user" (
-    id VARCHAR(255) PRIMARY KEY, -- Unique identifier for the user
+create table if not exists "user" (
+    id VARCHAR(255) not null PRIMARY KEY, -- Unique identifier for the user
     email VARCHAR(255) NOT NULL UNIQUE, -- User's email for identification
     first_name VARCHAR(64), -- User's first name for display
     last_name VARCHAR(64), -- User's last name for display
@@ -31,7 +31,7 @@ CREATE TABLE meeting (
 -- Create the participant table
 CREATE TABLE participant (
     id UUID PRIMARY KEY default uuid_generate_v4(), -- Auto-incrementing ID for participant records
-    meeting_id BIGINT NOT NULL, -- Links to meeting table
+    meeting_uuid VARCHAR(255) NOT NULL, -- Links to meeting table
     user_id VARCHAR(255), -- Links to user table (nullable for non-logged-in users)
     name VARCHAR(255), -- Display name for reference
     email VARCHAR(255), -- Email for identification (nullable for non-logged-in users)
@@ -39,29 +39,29 @@ CREATE TABLE participant (
     leave_time TIMESTAMP WITH TIME ZONE, -- Leave time for duration calculation
     duration INTEGER, -- Duration in seconds for analysis
     internal_user BOOLEAN DEFAULT FALSE, -- Flag for internal vs external users
-    FOREIGN KEY (meeting_id) REFERENCES meeting(id),
+    FOREIGN KEY (meeting_uuid) REFERENCES meeting(uuid),
     FOREIGN KEY (user_id) REFERENCES "user"(id)
 );
 
 -- Create the recording table
 CREATE TABLE recording (
     id UUID PRIMARY KEY default uuid_generate_v4(), -- Auto-incrementing ID for recording records
-    meeting_id BIGINT NOT NULL, -- Links to meeting table
+    meeting_uuid VARCHAR(255) NOT NULL, -- Links to meeting table
     file_id VARCHAR(255) NOT NULL UNIQUE, -- Unique file ID from Zoom
     file_type VARCHAR(50), -- Type of recording (e.g., MP4, M4A)
     file_size BIGINT, -- File size in bytes for storage analysis
-	file_extension VARCHAR(10) -- File extension for downloading
+	file_extension VARCHAR(10), -- File extension for downloading
     recording_start TIMESTAMP WITH TIME ZONE, -- Start time of recording
     recording_end TIMESTAMP WITH TIME ZONE, -- End time of recording
     recording_type VARCHAR(255), -- Specific type (e.g., shared_screen)
     download_url TEXT, -- URL to download the file
     -- file_content BYTE, -- Blob storage for the actual recording file
 	file_path TEXT, -- Store S3 path to the recording
-    FOREIGN KEY (meeting_id) REFERENCES meeting(id)
+    FOREIGN KEY (meeting_uuid) REFERENCES meeting(uuid)
 );
 
 -- Add indexes for performance
 CREATE INDEX idx_meeting_host_id ON meeting(host_id);
-CREATE INDEX idx_participant_meeting_id ON participant(meeting_id);
+CREATE INDEX idx_participant_meeting_id ON participant(meeting_uuid);
 CREATE INDEX idx_participant_user_id ON participant(user_id);
-CREATE INDEX idx_recording_meeting_id ON recording(meeting_id);
+CREATE INDEX idx_recording_meeting_id ON recording(meeting_uuid);
