@@ -5,6 +5,7 @@ keys.json
 postgres-db-volume
 zoom-db-volume
 airflow-webserver.pid
+webserver_config.py
 .env
 .vs/
 .idea/

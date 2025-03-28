@@ -71,6 +71,7 @@ services:
     ports:
       - 8080:8080
     restart: always
+    entrypoint: ["/bin/bash", "-c", "airflow db init && airflow users create --username ${_AIRFLOW_WWW_USER_USERNAME} --password ${_AIRFLOW_WWW_USER_PASSWORD} --firstname Admin --lastname User --role Admin --email admin@admin.com && airflow webserver"]
 
   airflow-scheduler:
     <<: *airflow-common
