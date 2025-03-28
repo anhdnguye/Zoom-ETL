@@ -1,11 +1,11 @@
-version: '3'
+version: '3.9'
 x-airflow-common:
   &airflow-common
   image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:latest}
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor # for parallel executor
-    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
@@ -28,7 +28,7 @@ x-airflow-common:
 
 services:
   zoom_db:
-    image: postgres:latest
+    image: postgres:16
     ports:
       - 5432:5432
     environment:
@@ -41,7 +41,9 @@ services:
     restart: always
 
   postgres:
-    image: postgres:latest
+    image: postgres:16
+    ports:
+      - 5433:5432
     environment:
       POSTGRES_USER: ${MY_USER}
       POSTGRES_PASSWORD: ${PASSWORD}
