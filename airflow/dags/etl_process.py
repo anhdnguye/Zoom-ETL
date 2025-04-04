@@ -50,19 +50,19 @@ def etl_process():
         return [user_ids[i:i + chunk_size] for i in range(0, len(user_ids), chunk_size)]
     
     @task
-    def get_user_info(user_id: str) -> Dict:
-        """Task to get user information"""
+    def process_user_chunk(chunk: List[str]) -> List[Dict]:
+        """Task to process a chunk of user IDs and return user info."""
         extractor = DataExtractor('https://api.zoom.us/v2')
-        user_details = extractor.get_user_details(user_id)
-        return {"user_id": user_id, "details": user_details}
+        return [{"user_id": user_id, "details": extractor.get_user_details(user_id)} 
+                for user_id in chunk]
 
     @task
-    def get_user_meetings(user_id: str, last_run_timestamp: str) -> Dict:
-        """Task to get all meetings for a user since last run."""
+    def process_meeting_chunk(chunk: List[str], last_run_timestamp: str) -> List[Dict]:
+        """Task to process a chunk of user IDs and return meeting info."""
         extractor = DataExtractor('https://api.zoom.us/v2')
         last_run_dt = datetime.fromisoformat(last_run_timestamp)
-        meeting_ids = extractor.get_meetings(user_id, last_run_dt)
-        return {"user_id": user_id, "meeting_ids": meeting_ids}
+        return [{"user_id": user_id, "meeting_ids": extractor.get_meetings(user_id, last_run_dt)} 
+                for user_id in chunk]
     
     @task
     def get_meeting_details(meeting_info: Dict) -> Dict:
@@ -151,11 +151,11 @@ def etl_process():
 
     # Process user information for each chunk
     with TaskGroup(group_id='process_user_info') as user_info_group:
-        user_infos = get_user_info.expand(user_id=user_id_chunks)
+        user_infos = process_user_chunk.expand(chunk=user_id_chunks)
 
     # Process user meetings for each chunk
     with TaskGroup(group_id='process_user_meetings') as user_meetings_group:
-        user_meetings = get_user_meetings.partial(last_run_timestamp=last_run).expand(user_id=user_id_chunks)
+        user_meetings = process_meeting_chunk.partial(last_run_timestamp=last_run).expand(chunk=user_id_chunks)
 
     # Generate meeting info for each user meeting
     meeting_infos = generate_meeting_info.expand(user_meeting=user_meetings)
