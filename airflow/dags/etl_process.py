@@ -1,5 +1,6 @@
 from airflow.decorators import dag, task
 from airflow.operators.dummy import DummyOperator
+from airflow.utils.task_group import TaskGroup
 
 import os
 from datetime import datetime, timedelta
@@ -42,6 +43,11 @@ def etl_process():
         """Task to get all users IDs."""
         extractor = DataExtractor('https://api.zoom.us/v2')
         return extractor.get_all_user_ids()
+    
+    @task
+    def split_user_ids(user_ids: List[str], chunk_size: int = 1000) -> List[List[str]]:
+        """Task to split user IDs into chunks."""
+        return [user_ids[i:i + chunk_size] for i in range(0, len(user_ids), chunk_size)]
     
     @task
     def get_user_info(user_id: str) -> Dict:
@@ -124,6 +130,13 @@ def etl_process():
                     participants.append(participant)
             loader.load_participants(participants)
     
+    @task
+    def generate_meeting_info(user_meeting: Dict) -> List[Dict]:
+        """Task to generate meeting info for dynamic mapping."""
+        meeting_ids = user_meeting['meeting_ids']
+        user_id = user_meeting['user_id']
+        return [{"user_id": user_id, "meeting_id": meeting_id} for meeting_id in meeting_ids]
+    
     start = DummyOperator(task_id='start')
     end = DummyOperator(task_id='end')
 
@@ -133,27 +146,23 @@ def etl_process():
     # Get all users
     user_ids = get_all_users()
 
-    # Process user information in parallel
-    user_infos = [get_user_info(user_id) for user_id in user_ids]
+    # Split user IDs into chunks
+    user_id_chunks = split_user_ids(user_ids, chunk_size=1000)
 
-    # Get meetings for each user in parallel
-    user_meetings = [get_user_meetings(user_id, last_run) for user_id in user_ids]
+    # Process user information for each chunk
+    with TaskGroup(group_id='process_user_info') as user_info_group:
+        user_infos = get_user_info.expand(user_id=user_id_chunks)
 
-    # Process meetings and their details
-    meeting_details_tasks = []
-    meeting_participants_tasks = []
-    
-    for user_meeting in user_meetings:
-        meeting_ids = user_meeting['meeting_ids']
-        user_id = user_meeting['user_id']
-        
-        for meeting_id in meeting_ids:
-            meeting_info = {"user_id": user_id, "meeting_id": meeting_id}
-            meeting_details = get_meeting_details(meeting_info)
-            meeting_participants = get_meeting_participants(meeting_info)
-            
-            meeting_details_tasks.append(meeting_details)
-            meeting_participants_tasks.append(meeting_participants)
+    # Process user meetings for each chunk
+    with TaskGroup(group_id='process_user_meetings') as user_meetings_group:
+        user_meetings = get_user_meetings.partial(last_run_timestamp=last_run).expand(user_id=user_id_chunks)
+
+    # Generate meeting info for each user meeting
+    meeting_infos = generate_meeting_info.expand(user_meeting=user_meetings)
+
+    # Process meeting details and participants using dynamic task mapping
+    meeting_details_tasks = get_meeting_details.expand(meeting_info=meeting_infos)
+    meeting_participants_tasks = get_meeting_participants.expand(meeting_info=meeting_infos)
     
     # Load data into the database
     load_users_task = load_users(user_infos)
@@ -165,12 +174,11 @@ def etl_process():
 
     # Define task dependencies
     start >> last_run >> user_ids
-    user_ids >> user_infos
-    user_ids >> user_meetings
-    
-    # Ensure meeting details and participants are processed after meetings are fetched
-    user_meetings >> meeting_details_tasks
-    user_meetings >> meeting_participants_tasks
+    user_ids >> user_id_chunks
+    user_id_chunks >> user_info_group
+    [user_id_chunks, last_run] >> user_meetings_group
+    user_meetings_group >> meeting_infos
+    meeting_infos >> [meeting_details_tasks, meeting_participants_tasks]
 
     # Load data after extraction
     user_infos >> load_users_task
