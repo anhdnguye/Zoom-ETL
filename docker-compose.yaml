@@ -15,10 +15,12 @@ x-airflow-common:
     AIRFLOW__CORE__DEFAULT_TIMEZONE: 'America/Los_Angles'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
+    - ./.env:/opt/airflow/.env
     - ./airflow:/opt/airflow
     - ./config:/opt/airflow/config
     - ./logs:/opt/airflow/logs
     - ./scripts:/opt/airflow/scripts
+    - ~/.aws:/home/airflow/.aws:ro
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-0}"
   depends_on:
     redis:
