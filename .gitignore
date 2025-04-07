@@ -11,5 +11,6 @@ webserver_config.py
 .idea/
 .DS_Store
 logs/
+config/
 unit_test
 testing_files
