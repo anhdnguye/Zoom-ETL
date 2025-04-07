@@ -188,11 +188,10 @@ class DataExtractor:
         """Download the recording and upload to S3"""
         try:
             s3_client = boto3.client('s3')
-            bucket_name = Variable.get("S3_BUCKET_NAME")
+            bucket_name = 'S3_BUCKET_NAME'
 
             # Construct S3 key (path) for the recording
-            # s3_key = f"recordings/{topic}/{file_id}.{file_type.lower()}"
-            s3_key = f"{uuid}/{topic}.{file_extension}"
+            s3_key = f"recordings/{topic}/{topic}.{file_extension}"
             s3_url = f"s3://{bucket_name}/{s3_key}"
 
             headers = {
