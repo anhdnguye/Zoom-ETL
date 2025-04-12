@@ -176,11 +176,25 @@ class DataExtractor:
             self.logger.error(f"Error getting recording details for {encoded_meeting_id}: {e}")
             raise
 
+    def sanitize_filename(self, filename: str) -> str:
+        """Sanitize the filename to ensure it is valid for both S3 and local disk storage."""
+        invalid_chars = r'<>:"/\|?*'
+        for char in invalid_chars:
+            filename = filename.replace(char, '_')
+        
+        # Limit the length of the filename
+        max_length = 255
+        if len(filename) > max_length:
+            filename = filename[:max_length]
+        
+        return filename
+
     @token_manager.token_required
     def download_meeting_recordings(
         self,
         download_url: str,
-        uuid: str,
+        email: str,
+        start_time: str, # 2025-01-01T01:20:50Z UTC
         topic: str,
         file_extension: str,
         token: Optional[str]=None
@@ -190,8 +204,12 @@ class DataExtractor:
             s3_client = boto3.client('s3')
             bucket_name = 'S3_BUCKET_NAME'
 
+            # Sanitize and format the start time and topic
+            sanitized_start_time = self.sanitize_filename(start_time.replace(':', '-'))
+            sanitized_topic = self.sanitize_filename(topic)
+
             # Construct S3 key (path) for the recording
-            s3_key = f"recordings/{topic}/{topic}.{file_extension}"
+            s3_key = f"recordings/{email}/{sanitized_start_time}/{sanitized_topic}.{file_extension}"
             s3_url = f"s3://{bucket_name}/{s3_key}"
 
             headers = {
@@ -199,7 +217,7 @@ class DataExtractor:
                 'Content-Type': 'application/json'
             }
 
-            self.logger.info(f"Starting download of recording {uuid} from {download_url}")
+            self.logger.info(f"Starting download of recording {topic} from {download_url}")
             with requests.get(download_url, headers=headers, stream=True) as response:
                 response.raise_for_status()
 
@@ -213,7 +231,7 @@ class DataExtractor:
                     temp_file_path = temp_file.name
 
             # Upload the temporary file to S3
-            self.logger.info(f"Uploading recording {uuid} to S3: {s3_url}")
+            self.logger.info(f"Uploading recording {topic} to S3: {s3_url}")
 
             try:
                 s3_client.upload_file(
@@ -231,19 +249,19 @@ class DataExtractor:
             
             # Verify the upload by checking if the object exists
             s3_client.head_object(Bucket=bucket_name, Key=s3_key)
-            self.logger.info(f"Successfully uploaded recording {uuid} to {s3_url}")
+            self.logger.info(f"Successfully uploaded recording {topic} to {s3_url}")
 
             # Return the S3 URL for database storage
             return s3_url
 
         except RequestException as e:
-            self.logger.error(f"Failed to download recording {uuid} from Zoom: {e}")
+            self.logger.error(f"Failed to download recording {topic} from Zoom: {e}")
             raise
         except ClientError as e:
-            self.logger.error(f"Failed to upload recording {uuid} to S3: {e}")
+            self.logger.error(f"Failed to upload recording {topic} to S3: {e}")
             raise
         except Exception as e:
-            self.logger.error(f"Unexpected error for recording {uuid}: {e}")
+            self.logger.error(f"Unexpected error for recording {topic}: {e}")
             raise
 
     def get_last_run_timestamp(self) -> str:
