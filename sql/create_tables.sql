@@ -45,9 +45,8 @@ CREATE TABLE participant (
 
 -- Create the recording table
 CREATE TABLE recording (
-    id UUID PRIMARY KEY default uuid_generate_v4(), -- Auto-incrementing ID for recording records
+    id VARCHAR(255) not null PRIMARY KEY, -- Unique file ID from Zoom
     meeting_uuid VARCHAR(255) NOT NULL, -- Links to meeting table
-    file_id VARCHAR(255) NOT NULL UNIQUE, -- Unique file ID from Zoom
     file_type VARCHAR(50), -- Type of recording (e.g., MP4, M4A)
     file_size BIGINT, -- File size in bytes for storage analysis
 	file_extension VARCHAR(10), -- File extension for downloading

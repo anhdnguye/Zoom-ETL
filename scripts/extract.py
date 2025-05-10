@@ -6,7 +6,7 @@ import time
 from typing import List, Dict, Optional, Generator
 from requests.exceptions import RequestException
 from oauth import token_manager
-from airflow.models import Variable
+from airflow.sdk import Variable
 from urllib.parse import quote
 import tempfile
 
@@ -32,7 +32,6 @@ class DataExtractor:
                     time.sleep(retry_after)
                     continue
                 response.raise_for_status()
-                response.raise_for_status()
                 data = response.json()
                 yield data
                 
@@ -40,7 +39,7 @@ class DataExtractor:
                     break
                 params['next_page_token'] = data['next_page_token']
             except RequestException as e:
-                self.logger.error(f"API request failed for {url}: {e}")
+                self.logger.error(f"API request failed for {url}: {e}, response: {response.text if response else 'No response'}")
                 raise
 
     @token_manager.token_required
@@ -171,7 +170,7 @@ class DataExtractor:
             url = f"{self.base_url}/meetings/{encoded_meeting_id}/recordings"
             response = requests.get(url, headers=headers)
             response.raise_for_status()
-            return response.json()
+            return response.json().get('recording_files', [])
         except RequestException as e:
             self.logger.error(f"Error getting recording details for {encoded_meeting_id}: {e}")
             raise
@@ -267,7 +266,7 @@ class DataExtractor:
     def get_last_run_timestamp(self) -> str:
         """Get the timestamp of the last pipeline run."""
         try:
-            last_run = Variable.get("last_pipeline_run", default_var=None)
+            last_run = Variable.get("last_pipeline_run")
             return last_run if last_run else datetime.now().isoformat()
         except Exception as e:
             logging.error(f"Error getting last run timestamp: {e}")

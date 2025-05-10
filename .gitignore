@@ -1,4 +1,3 @@
-*.csv
 airflow.cfg
 keys.json
 *.ipynb
@@ -14,3 +13,5 @@ logs/
 config/
 unit_test
 testing_files
+.pytest_cache
+__pycache__/
