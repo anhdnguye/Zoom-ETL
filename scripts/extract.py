@@ -8,10 +8,6 @@ from requests.exceptions import RequestException
 from oauth import token_manager
 from airflow.sdk import Variable
 from urllib.parse import quote
-import tempfile
-
-import boto3
-from botocore.exceptions import ClientError
 
 class DataExtractor:
     def __init__(self, base_url):
