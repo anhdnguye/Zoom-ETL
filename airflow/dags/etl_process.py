@@ -165,9 +165,6 @@ def etl_process():
     # Process meeting details and participants using dynamic task mapping
     meeting_details_tasks = get_meeting_details.expand(meeting_info=meeting_infos)
     meeting_participants_tasks = get_meeting_participants.expand(meeting_info=meeting_infos)
-
-    # Process meeting recording and download
-    meeting_recordings_tasks = get_meeting_recordings.expand(meeting_info=meeting_infos)
     
     # Load data into the database
     load_users_task = load_users(user_infos)
