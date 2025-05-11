@@ -24,7 +24,7 @@ This project provides a scalable, containerized data pipeline built with Docker 
 
 1. User Email Retrieval
 2. User & Meeting Data Extraction
-3. >User Details Collection
+3. User Details Collection
 4. Meeting Details Collection
 5. Metadata Storage
 
