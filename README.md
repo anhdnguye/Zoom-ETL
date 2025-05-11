@@ -4,36 +4,33 @@ This project provides a scalable, containerized data pipeline built with Docker 
 
 ## Architecture Overview
 
-<ul>
-<li>**AWS Lambda** handles Zoom recording webhooks and uploads files to S3 in near real-time.</li>
-<li>**Apache Airflow** orchestrates the ETL workflow using Python scripts.</li>
-<li>**AWS RDS (PostgreSQL)** stores user, meeting, participant, and recording metadata.</li>
-<li>**AWS S3** holds raw recording files.</li>
-<li>**Dropbox** (optional) is used for watching recording on the fly.</li>
-<li>**Power BI** connects to RDS for business intelligence and reporting.</li>
-</ul>
+* **AWS Lambda** handles Zoom recording webhooks and uploads files to S3 in near real-time.
+* **Apache Airflow** orchestrates the ETL workflow using Python scripts.
+* **AWS RDS (PostgreSQL)** stores user, meeting, participant, and recording metadata.
+* **AWS S3** holds raw recording files.
+* **Dropbox** (optional) is used for watching recording on the fly.
+* **Power BI** connects to RDS for business intelligence and reporting.
+
 
 ## Data Pipeline Workflow
 
 # Real-Time Recording Ingestion (via AWS Lambda)
-<ol>
-<li>**Zoom Webhook** triggers on meeting recording completion.</li>
-<li>**AWS Lambda** processes the event:</li>
-</ol>
+
+1. **Zoom Webhook** triggers on meeting recording completion.
+2. **AWS Lambda** processes the event:
+
 
 # Scheduled Metadata ETL (via Apache Airflow)
-<ol>
-<li>User Email Retrieval</li>
-<li>User & Meeting Data Extraction</li>
-<li>User Details Collection</li>
-<li>Meeting Details Collection</li>
-<li>Metadata Storage</li>
-</ol>
+
+1. User Email Retrieval
+2. User & Meeting Data Extraction
+3. >User Details Collection
+4. Meeting Details Collection
+5. Metadata Storage
 
 ## Technology Stack
-<ul>
-<li>Python, Docker, Apache Airflow</li>
-<li>AWS Lambda, RDS (PostgreSQL), S3</li>
-<li>Dropbox API</li>
-<li>Power BI</li>
-</ul>
+
+* Python, Docker, Apache Airflow
+* AWS Lambda, RDS (PostgreSQL), S3
+* Dropbox API
+* Power BI
