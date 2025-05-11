@@ -14,13 +14,13 @@ This project provides a scalable, containerized data pipeline built with Docker 
 
 ## Data Pipeline Workflow
 
-# Real-Time Recording Ingestion (via AWS Lambda)
+### Real-Time Recording Ingestion (via AWS Lambda)
 
 1. **Zoom Webhook** triggers on meeting recording completion.
 2. **AWS Lambda** processes the event:
 
 
-# Scheduled Metadata ETL (via Apache Airflow)
+### Scheduled Metadata ETL (via Apache Airflow)
 
 1. User Email Retrieval
 2. User & Meeting Data Extraction
