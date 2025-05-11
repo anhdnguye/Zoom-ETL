@@ -5,6 +5,7 @@ from airflow.utils.task_group import TaskGroup
 import os
 from datetime import datetime, timedelta
 from typing import List, Dict
+import logging
 
 import sys
 sys.path.insert(1, '/opt/airflow/scripts')
@@ -67,6 +68,9 @@ def etl_process():
     @task
     def generate_meeting_info(user_meeting: Dict) -> List[Dict]:
         """Task to generate meeting info for dynamic mapping."""
+        if not isinstance(user_meeting, dict):
+            logging.error(f"Expected dict, got {type(user_meeting)}: {user_meeting}")
+            return []
         meeting_ids = user_meeting['meeting_ids']
         user_id = user_meeting['user_id']
         if not meeting_ids:
@@ -115,7 +119,17 @@ def etl_process():
         """Task to load user data into the database."""
         loader = DataLoader(connection_params)
         with loader:
-            users = [user_info["details"] for user_info in user_infos]
+            # Flatten if nested and ensure each item is a dict
+            flat_user_infos = []
+            for item in user_infos:
+                if isinstance(item, list):
+                    flat_user_infos.extend(item)
+                else:
+                    flat_user_infos.append(item)
+            users = [user_info["details"] for user_info in flat_user_infos if isinstance(user_info, dict)]
+            if not users:
+                logging.warning(f"No valid user details found in {flat_user_infos}")
+                return []
             loader.load_users(users)
 
     @task
