@@ -1,6 +1,6 @@
 # Zoom Data Pipeline with Apache Airflow
 
-This project provides a scalable, containerized data pipeline built with Docker and Apache Airflow to orchestrate the extraction, transformation, and loading (ETL) of Zoom data. It integrates with AWS services such as RDS, S3, and optionally Dropbox, enabling both real-time access to recordings and daily backups of metadata for analytics.
+This project provides a scalable, event-driven data pipeline that integrates **Zoom**, **AWS**, and **Dropbox** to orchestrate and manage user and meeting data and recordings. The pipeline uses **Apache Airflow** (via Docker) for scheduled ETL tasks and **AWS Lambda** for near real-time ingestion of Zoom recordings via webhooks.
 
 ## Architecture Overview
 
@@ -18,18 +18,22 @@ This project provides a scalable, containerized data pipeline built with Docker 
 
 1. **Zoom Webhook** triggers on meeting recording completion.
 2. **AWS Lambda** processes the event:
+- Selects the needed recording types.
+- Stores raw data in **AWS S3**.
+- Builds and uploads the recording to **Dropbox**.
+- Sends metadata such as recording info, S3/Dropbox links to **RDS** via direct DB insert.
 
 
 ### Scheduled Metadata ETL (via Apache Airflow)
 
-1. User Email Retrieval
-2. User & Meeting Data Extraction
-3. User Details Collection
-4. Meeting Details Collection
-5. Metadata Storage
+1. User Email Retrieval: Retrieves all user emails from Zoom API.
+2. User & Meeting Data Extraction: For each user, fetches user metadata and only meetings since the last pipeline run.
+3. Meeting Details Collection: For each meeting, extracts meeting metadata and participant metadata.
+4. Metadata Storage: Stores all structured data in **AWS RDS (PostgreSQL)**.
 
 ## Technology Stack
 
+* Zoom API
 * Python, Docker, Apache Airflow
 * AWS Lambda, RDS (PostgreSQL), S3
 * Dropbox API
