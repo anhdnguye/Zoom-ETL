@@ -66,41 +66,43 @@ def etl_process():
                 for user_id in chunk]
     
     @task
-    def generate_meeting_info(user_meeting: Dict) -> List[Dict]:
-        """Task to generate meeting info for dynamic mapping."""
-        if not isinstance(user_meeting, dict):
-            logging.error(f"Expected dict, got {type(user_meeting)}: {user_meeting}")
-            return []
-        meeting_ids = user_meeting['meeting_ids']
-        user_id = user_meeting['user_id']
-        if not meeting_ids:
-            return []
-        return [{"user_id": user_id, "meeting_id": meeting_id} for meeting_id in meeting_ids]
+    def flatten_meeting_info(user_meeting: List[List[Dict]]) -> List[Dict]:
+        """Task to flatten meeting info for splitting into chunks."""
+        flat_meeting_info = []
+        for item in user_meeting:
+            if isinstance(item, list):
+                flat_meeting_info.extend(item)
+            else:
+                flat_meeting_info.append(item)
+        
+        return [
+            {"user_id": item['user_id'],
+            "meeting_id": meeting_} for item in flat_meeting_info for meeting_ in item['meeting_ids'] if meeting_]
     
     @task
-    def get_meeting_details(meeting_info: Dict) -> Dict:
+    def split_meetings(meeting_infos: List[Dict], chunk_size: int = 1000) -> List[List[Dict]]:
+        """Task to split meeting infos into chunks."""
+        return [meeting_infos[i:i + chunk_size] for i in range(0, len(meeting_infos), chunk_size)]
+
+    @task
+    def get_meeting_details(meeting_infos: List[Dict]) -> List[Dict]:
         """Task to get meeting details and save to metadata directory."""
         extractor = DataExtractor('https://api.zoom.us/v2')
-        meeting_id = meeting_info['meeting_id']
-        user_id = meeting_info['user_id']
-        meeting_details = extractor.get_meeting_details(meeting_id)
-        return {
-            "user_id": user_id,
-            "meeting_id": meeting_id,
-            "details": meeting_details
-        }
+        return [{
+            "user_id": meeting['user_id'],
+            "meeting_id": meeting['meeting_id'],
+            "details": extractor.get_meeting_details(meeting['meeting_id'])
+        } for meeting in meeting_infos]
+    
     @task
-    def get_meeting_participants(meeting_info: Dict) -> Dict:
+    def get_meeting_participants(meeting_infos: List[Dict]) -> List[Dict]:
         """Task to get meeting participants and save to metadata directory."""
         extractor = DataExtractor('https://api.zoom.us/v2')
-        meeting_id = meeting_info['meeting_id']
-        user_id = meeting_info['user_id']
-        participants = extractor.get_meeting_participants(meeting_id)
-        return {
-            "user_id": user_id,
-            "meeting_id": meeting_id,
-            "participants": participants
-        }
+        return [{
+            "user_id": meeting['user_id'],
+            "meeting_id": meeting['meeting_id'],
+            "participants": extractor.get_meeting_participants(meeting['meeting_id'])
+        } for meeting in meeting_infos]
     
     @task
     def get_last_run_timestamp() -> str:
@@ -115,7 +117,7 @@ def etl_process():
         return extractor.set_last_run_timestamp()
     
     @task
-    def load_users(user_infos: List[Dict]) -> None:
+    def load_users(user_infos: List[List[Dict]]) -> None:
         """Task to load user data into the database."""
         loader = DataLoader(connection_params)
         with loader:
@@ -133,15 +135,24 @@ def etl_process():
             loader.load_users(users)
 
     @task
-    def load_meetings(meeting_details_tasks: List[Dict]) -> None:
+    def load_meetings(meeting_details: List[List[Dict]]) -> None:
         """Task to load meeting data into the database."""
         loader = DataLoader(connection_params)
         with loader:
-            meetings = [meeting["details"] for meeting in meeting_details_tasks]
+            flat_meeting_infos = []
+            for item in meeting_details:
+                if isinstance(item, list):
+                    flat_meeting_infos.extend(item)
+                else:
+                    flat_meeting_infos.append(item)
+            meetings = [meeting["details"] for meeting in flat_meeting_infos if isinstance(meeting, dict)]
+            if not meetings:
+                logging.warning(f"No valid meeting details found in {flat_meeting_infos}")
+                return []
             loader.load_meetings(meetings)
 
     @task
-    def load_participants(meeting_participants_tasks: List[Dict]) -> None:
+    def load_participants(meeting_participants: List[List[Dict]]) -> None:
         """Task to load participant data into the database."""
         loader = DataLoader(connection_params)
         with loader:
@@ -165,20 +176,26 @@ def etl_process():
     # Split user IDs into chunks
     user_id_chunks = split_user_ids(user_ids, chunk_size=1000)
 
-    # Process user information for each chunk
+    # Process user information for each chunk -> List[List[Dict]]
     with TaskGroup(group_id='process_user_info') as user_info_group:
         user_infos = process_user_chunk.expand(chunk=user_id_chunks)
 
-    # Process user meetings for each chunk
+    # Process user meetings for each chunk -> List[List[Dict]]
     with TaskGroup(group_id='process_user_meetings') as user_meetings_group:
         user_meetings = process_meeting_chunk.partial(last_run_timestamp=last_run).expand(chunk=user_id_chunks)
 
     # Generate meeting id and user id for each user meeting
-    meeting_infos = generate_meeting_info.expand(user_meeting=user_meetings)
+    meeting_infos = flatten_meeting_info(user_meeting=user_meetings)
+
+    # Split meeting IDs into chunks
+    meeting_chunks = split_meetings(meeting_infos, chunk_size=200)
 
     # Process meeting details and participants using dynamic task mapping
-    meeting_details_tasks = get_meeting_details.expand(meeting_info=meeting_infos)
-    meeting_participants_tasks = get_meeting_participants.expand(meeting_info=meeting_infos)
+    with TaskGroup(group_id='process_meeting_details') as meeting_detail_group:
+        meeting_details_tasks = get_meeting_details.expand(meeting_infos=meeting_chunks)
+    
+    with TaskGroup(group_id='process_meeting_participants') as meeting_participant_group:
+        meeting_participants_tasks = get_meeting_participants.expand(meeting_infos=meeting_chunks)
     
     # Load data into the database
     load_users_task = load_users(user_infos)
@@ -193,13 +210,13 @@ def etl_process():
     user_ids >> user_id_chunks
     user_id_chunks >> user_info_group
     [user_id_chunks, last_run] >> user_meetings_group
-    user_meetings_group >> meeting_infos
-    meeting_infos >> [meeting_details_tasks, meeting_participants_tasks]
+    user_meetings_group >> meeting_infos >> meeting_chunks
+    meeting_chunks >> [meeting_detail_group, meeting_participant_group]
 
     # Load data after extraction
     user_infos >> load_users_task
-    meeting_details_tasks >> load_meetings_task
-    meeting_participants_tasks >> load_participants_task
+    meeting_detail_group >> load_meetings_task
+    meeting_participant_group >> load_participants_task
     
     # Final dependency chain
     [load_users_task, load_meetings_task, load_participants_task] >> set_last_run >> end
