@@ -1,16 +1,8 @@
-airflow.cfg
-keys.json
 *.ipynb
-postgres-db-volume
-zoom-db-volume
-airflow-webserver.pid
-webserver_config.py
 .env
 .vs/
 .idea/
 .DS_Store
-logs/
-config/
 unit_test
 testing_files
 .pytest_cache
