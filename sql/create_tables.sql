@@ -19,12 +19,12 @@ CREATE TABLE meeting (
     uuid VARCHAR(255) NOT NULL PRIMARY KEY, -- UUID for unique meeting instance
     host_id VARCHAR(255) NOT NULL, -- Links to user table
     topic VARCHAR(255), -- Meeting topic for reference
+    created_at TIMESTAMP WITH TIME ZONE, -- Created time for analysis
     start_time TIMESTAMP WITH TIME ZONE, -- Start time for analysis
     end_time TIMESTAMP WITH TIME ZONE, -- End time for duration calculation
     duration INTEGER, -- Duration in minutes for analysis
     participants_count INTEGER, -- Number of participants for analysis
     type INTEGER, -- Meeting type for filtering (e.g., scheduled, instant)
-    has_recording BOOLEAN DEFAULT FALSE, -- Flag to indicate if meeting has recordings
     FOREIGN KEY (host_id) REFERENCES "user"(id)
 );
 

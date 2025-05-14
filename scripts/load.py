@@ -117,20 +117,20 @@ class DataLoader:
 
         query = """
             INSERT INTO meeting (
-                id, uuid, host_id, topic, start_time, end_time,
-                duration, participants_count, type, has_recording
+                id, uuid, host_id, topic, created_time, start_time, end_time,
+                duration, participants_count, type
             )
             VALUES %s
             ON CONFLICT (uuid) DO UPDATE SET
                 id = EXCLUDED.id,
                 host_id = EXCLUDED.host_id,
                 topic = EXCLUDED.topic,
+                created_time = EXCLUDED.created_time,
                 start_time = EXCLUDED.start_time,
                 end_time = EXCLUDED.end_time,
                 duration = EXCLUDED.duration,
                 participants_count = EXCLUDED.participants_count,
-                type = EXCLUDED.type,
-                has_recording = EXCLUDED.has_recording
+                type = EXCLUDED.type
         """
 
         for i in range(0, len(meetings), self.batch_size):
@@ -141,12 +141,12 @@ class DataLoader:
                     meeting.get('uuid'),
                     meeting.get('host_id'),
                     meeting.get('topic'),
-                    meeting.get('start_time'),
-                    meeting.get('end_time'),
+                    self._parse_datetime(meeting.get('created_time')),
+                    self._parse_datetime(meeting.get('start_time')),
+                    self._parse_datetime(meeting.get('end_time')),
                     meeting.get('duration'),
                     meeting.get('participants_count'),
-                    meeting.get('type'),
-                    meeting.get('has_recording', False)
+                    meeting.get('type')
                 )
                 for meeting in batch
             ]
@@ -183,8 +183,8 @@ class DataLoader:
                     participant.get('user_id'),
                     participant.get('name'),
                     participant.get('email'),
-                    participant.get('join_time'),
-                    participant.get('leave_time'),
+                    self._parse_datetime(participant.get('join_time')),
+                    self._parse_datetime(participant.get('leave_time')),
                     participant.get('duration'),
                     participant.get('internal_user', False)
                 )

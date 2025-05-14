@@ -1,4 +1,3 @@
-import os
 import requests
 import logging
 from datetime import datetime, timedelta
@@ -121,8 +120,8 @@ class DataExtractor:
         encoded_meeting_id = quote(meeting_id, safe='')
         combined_details = {}
         endpoints = [
-            f"{self.base_url}/metrics/meetings/{encoded_meeting_id}",
-            f"{self.base_url}/meetings/{encoded_meeting_id}"
+            f"{self.base_url}/meetings/{encoded_meeting_id}",
+            f"{self.base_url}/past_meetings/meetings/{encoded_meeting_id}"
         ]
 
         for url in endpoints:

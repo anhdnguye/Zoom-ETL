@@ -27,15 +27,12 @@ connection_params = {
 default_args={
     'owner': 'Anh',
     'depends_on_past': False,
-    'email': ['test@test.edu'],
-    'email_on_failure': False,
-    'email_on_retry': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
     'start_date': datetime(2024, 5, 21)
     }
 
-@dag('ETL', schedule='@once', default_args=default_args,
+@dag('Zoom_ETL', schedule='@once', default_args=default_args,
      catchup=False, tags=['Zoom'], description='Extracting Data from Zoom')
 def etl_process():
 
@@ -156,8 +153,15 @@ def etl_process():
         """Task to load participant data into the database."""
         loader = DataLoader(connection_params)
         with loader:
+            flat_participants = []
+            for item in meeting_participants:
+                if isinstance(item, list):
+                    flat_participants.extend(item)
+                else:
+                    flat_participants.append(item)
+
             participants = []
-            for meeting_participants in meeting_participants_tasks:
+            for meeting_participants in flat_participants:
                 meeting_id = meeting_participants["meeting_id"]
                 for participant in meeting_participants["participants"]:
                     participant["meeting_uuid"] = meeting_id
