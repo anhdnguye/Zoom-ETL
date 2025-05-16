@@ -117,7 +117,7 @@ class DataLoader:
 
         query = """
             INSERT INTO meeting (
-                id, uuid, host_id, topic, created_time, start_time, end_time,
+                id, uuid, host_id, topic, start_time, end_time,
                 duration, participants_count, type
             )
             VALUES %s
@@ -125,7 +125,6 @@ class DataLoader:
                 id = EXCLUDED.id,
                 host_id = EXCLUDED.host_id,
                 topic = EXCLUDED.topic,
-                created_time = EXCLUDED.created_time,
                 start_time = EXCLUDED.start_time,
                 end_time = EXCLUDED.end_time,
                 duration = EXCLUDED.duration,
@@ -141,7 +140,6 @@ class DataLoader:
                     meeting.get('uuid'),
                     meeting.get('host_id'),
                     meeting.get('topic'),
-                    self._parse_datetime(meeting.get('created_time')),
                     self._parse_datetime(meeting.get('start_time')),
                     self._parse_datetime(meeting.get('end_time')),
                     meeting.get('duration'),
