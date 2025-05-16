@@ -117,7 +117,7 @@ class DataExtractor:
             'Authorization': f'Bearer {token}',
             'Content-Type': 'application/json'
         }
-        encoded_meeting_id = quote(meeting_id, safe='')
+        encoded_meeting_id = quote(quote(meeting_id, safe='', safe=''))
         url = f"{self.base_url}/past_meetings/{encoded_meeting_id}"
 
         try:
@@ -135,7 +135,7 @@ class DataExtractor:
             'Content-Type': 'application/json'
         }
         
-        encoded_meeting_id = quote(meeting_id, safe='')
+        encoded_meeting_id = quote(quote(meeting_id, safe='', safe=''))
         url = f"{self.base_url}/past_meetings/{encoded_meeting_id}/participants"
         params = {'page_size': self.DEFAULT_PAGE_SIZE}
         
