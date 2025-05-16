@@ -30,17 +30,18 @@ CREATE TABLE meeting (
 
 -- Create the participant table
 CREATE TABLE participant (
-    id UUID PRIMARY KEY default uuid_generate_v4(), -- Auto-incrementing ID for participant records
+    index UUID PRIMARY KEY default uuid_generate_v4(), -- Auto-incrementing ID for participant records
+    id VARCHAR(255), -- Links to user table (nullable for non-logged-in users)
     meeting_uuid VARCHAR(255) NOT NULL, -- Links to meeting table
     user_id VARCHAR(255), -- Links to user table (nullable for non-logged-in users)
     name VARCHAR(255), -- Display name for reference
-    email VARCHAR(255), -- Email for identification (nullable for non-logged-in users)
+    user_email VARCHAR(255), -- Email for identification (nullable for non-logged-in users)
     join_time TIMESTAMP WITH TIME ZONE, -- Join time for attendance tracking
     leave_time TIMESTAMP WITH TIME ZONE, -- Leave time for duration calculation
     duration INTEGER, -- Duration in seconds for analysis
     internal_user BOOLEAN DEFAULT FALSE, -- Flag for internal vs external users
     FOREIGN KEY (meeting_uuid) REFERENCES meeting(uuid),
-    FOREIGN KEY (user_id) REFERENCES "user"(id)
+    FOREIGN KEY (id) REFERENCES "user"(id)
 );
 
 -- Create the recording table
