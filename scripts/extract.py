@@ -118,21 +118,14 @@ class DataExtractor:
             'Content-Type': 'application/json'
         }
         encoded_meeting_id = quote(meeting_id, safe='')
-        combined_details = {}
-        endpoints = [
-            f"{self.base_url}/meetings/{encoded_meeting_id}",
-            f"{self.base_url}/past_meetings/meetings/{encoded_meeting_id}"
-        ]
+        url = f"{self.base_url}/past_meetings/{encoded_meeting_id}"
 
-        for url in endpoints:
-            try:
-                for data in self._make_paginated_request(url, headers):
-                    combined_details.update(data)
-            except RequestException as e:
-                self.logger.error(f"Failed to get meeting details from {url}: {e}")
-                continue
-
-        return combined_details
+        try:
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()
+            return response
+        except RequestException as e:
+            self.logger.error(f"Failed to get meeting details from {url}: {e}")
 
     @token_manager.token_required
     def get_meeting_participants(self, meeting_id: str, token: Optional[str]=None) -> List[Dict]:
