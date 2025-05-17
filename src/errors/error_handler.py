@@ -129,15 +129,3 @@ class PipelineErrorHandler:
             
         except Exception as e:
             self.logger.error(f"Failed to send notification to {self.admin_email}: {e}")
-            
-    def update_context(self, task_id: str = None, additional_context: dict = None):
-        """
-        Update the context information for the error handler.
-        
-        Args:
-            task_id (str, optional): Update the task ID
-            additional_context (dict, optional): Additional context to merge
-        """
-        if task_id:
-            self.task_id = task_id
-        # Can add more context updates as needed
