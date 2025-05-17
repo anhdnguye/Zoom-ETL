@@ -8,9 +8,9 @@ from typing import List, Dict
 import logging
 
 import sys
-sys.path.insert(1, '/opt/airflow/scripts')
-from extract import DataExtractor
-from load import DataLoader
+sys.path.insert(1, '/opt/airflow/src')
+from src.zoom import DataExtractor
+from src.db import DataLoader
 
 from dotenv import load_dotenv
 load_dotenv()
