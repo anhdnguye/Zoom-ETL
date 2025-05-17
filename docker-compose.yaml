@@ -1,7 +1,7 @@
 version: '3.9'
 x-airflow-common:
   &airflow-common
-  image: apache/airflow:3.0.0
+  image: custom-airflow:latest
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor # for parallel executor
@@ -16,11 +16,11 @@ x-airflow-common:
     AIRFLOW__CORE__DEFAULT_TIMEZONE: 'America/Los_Angeles'
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
+    # _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
     - ./.env:/opt/airflow/.env
     - ./airflow/dags:/opt/airflow/dags
-    - ./airflow/config:/opt/airflow/config
+    - ./airflow/airflow.cfg:/opt/airflow/airflow.cfg
     - ./src:/opt/airflow/src
     - airflow_logs:/opt/airflow/logs
     - airflow_plugins:/opt/airflow/plugins

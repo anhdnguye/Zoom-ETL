@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import time
 from typing import List, Dict, Optional, Generator
 from requests.exceptions import RequestException
-from oauth import token_manager
+from zoom.oauth import token_manager
 from airflow.sdk import Variable
 from urllib.parse import quote
 
