@@ -53,7 +53,7 @@ CREATE TABLE recording (
     recording_start TIMESTAMP WITH TIME ZONE, -- Start time of recording
     recording_end TIMESTAMP WITH TIME ZONE, -- End time of recording
     recording_type VARCHAR(255), -- Specific type (e.g., shared_screen)
-    download_url TEXT, -- URL to download the file
+    dropbox_url TEXT, -- URL to download the file
     -- file_content BYTE, -- Blob storage for the actual recording file
 	file_path TEXT, -- Store S3 path to the recording
     FOREIGN KEY (meeting_uuid) REFERENCES meeting(uuid)
