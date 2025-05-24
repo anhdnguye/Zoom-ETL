@@ -59,6 +59,20 @@ CREATE TABLE recording (
     FOREIGN KEY (meeting_uuid) REFERENCES meeting(uuid)
 );
 
+CREATE TABLE recording_staging (
+    id VARCHAR(255) not null PRIMARY KEY, -- Unique file ID from Zoom
+    meeting_uuid VARCHAR(255) NOT NULL, -- Links to meeting table
+    file_type VARCHAR(50), -- Type of recording (e.g., MP4, M4A)
+    file_size BIGINT, -- File size in bytes for storage analysis
+	file_extension VARCHAR(10), -- File extension for downloading
+    recording_start TIMESTAMP WITH TIME ZONE, -- Start time of recording
+    recording_end TIMESTAMP WITH TIME ZONE, -- End time of recording
+    recording_type VARCHAR(255), -- Specific type (e.g., shared_screen)
+    dropbox_url TEXT, -- URL to download the file
+    -- file_content BYTE, -- Blob storage for the actual recording file
+	file_path TEXT, -- Store S3 path to the recording
+);
+
 -- Add indexes for performance
 CREATE INDEX idx_meeting_host_id ON meeting(host_id);
 CREATE INDEX idx_participant_meeting_id ON participant(meeting_uuid);
