@@ -24,7 +24,6 @@ x-airflow-common:
     - ./src:/opt/airflow/src
     - airflow_logs:/opt/airflow/logs
     - airflow_plugins:/opt/airflow/plugins
-    - ~/.aws:/home/airflow/.aws:ro
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-0}"
   depends_on:
     &airflow-common-depends-on
