@@ -189,3 +189,65 @@ class DataLoader:
                 for participant in batch
             ]
             self._execute_batch(query, data, "participant")
+
+    def merge_recordings(self):
+        """Merge recordings from staging table to main recording table"""
+        try:
+            # First, ensure the recording table exists (you might want to handle this in schema migration)
+            self.cursor.execute("""
+                CREATE TABLE IF NOT EXISTS recording (
+                    id TEXT PRIMARY KEY,
+                    meeting_uuid TEXT REFERENCES meeting(uuid),
+                    file_type TEXT,
+                    file_size BIGINT,
+                    file_extension TEXT,
+                    recording_start TIMESTAMP WITH TIME ZONE,
+                    recording_end TIMESTAMP WITH TIME ZONE,
+                    recording_type TEXT,
+                    dropbox_url TEXT,
+                    file_path TEXT,
+                    processed_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            
+            # Merge from staging to recording
+            self.cursor.execute("""
+                INSERT INTO recording (
+                    id, meeting_uuid, file_type, file_size, file_extension,
+                    recording_start, recording_end, recording_type, 
+                    dropbox_url, file_path
+                )
+                SELECT 
+                    s.id, s.meeting_uuid, s.file_type, s.file_size, s.file_extension,
+                    s.recording_start, s.recording_end, s.recording_type,
+                    s.dropbox_url, s.file_path
+                FROM zoom_recordings_staging s
+                JOIN meeting m ON s.meeting_uuid = m.uuid
+                ON CONFLICT (id) DO UPDATE SET
+                    meeting_uuid = EXCLUDED.meeting_uuid,
+                    file_type = EXCLUDED.file_type,
+                    file_size = EXCLUDED.file_size,
+                    file_extension = EXCLUDED.file_extension,
+                    recording_start = EXCLUDED.recording_start,
+                    recording_end = EXCLUDED.recording_end,
+                    recording_type = EXCLUDED.recording_type,
+                    dropbox_url = EXCLUDED.dropbox_url,
+                    file_path = EXCLUDED.file_path,
+                    processed_at = CURRENT_TIMESTAMP
+            """)
+            
+            # Cleanup staging table - remove processed records
+            self.cursor.execute("""
+                DELETE FROM zoom_recordings_staging s
+                WHERE EXISTS (
+                    SELECT 1 FROM recording r 
+                    WHERE r.id = s.id AND r.meeting_uuid = s.meeting_uuid
+                )
+            """)
+            
+            self.conn.commit()
+            self.logger.info("Successfully merged recordings from staging table")
+        except Exception as e:
+            self.conn.rollback()
+            self.logger.error(f"Error merging recordings: {e}")
+            raise

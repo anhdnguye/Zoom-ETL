@@ -167,6 +167,13 @@ def etl_process():
                     participant["meeting_uuid"] = meeting_id
                     participants.append(participant)
             loader.load_participants(participants)
+
+    @task
+    def merge_recordings() -> None:
+        """Task to merge recordings from staging table to main table."""
+        loader = DataLoader(connection_params)
+        with loader:
+            loader.merge_recordings()
     
     start = EmptyOperator(task_id='start')
     end = EmptyOperator(task_id='end')
@@ -206,6 +213,9 @@ def etl_process():
     load_meetings_task = load_meetings(meeting_details_tasks)
     load_participants_task = load_participants(meeting_participants_tasks)
 
+    # Merge recordings from staging table to recording table
+    merge_recordings_task = merge_recordings()
+
     # Set last run timestamp after all processing is complete
     set_last_run = set_last_run_timestamp()
 
@@ -223,6 +233,6 @@ def etl_process():
     meeting_participant_group >> load_participants_task
     
     # Final dependency chain
-    [load_users_task, load_meetings_task, load_participants_task] >> set_last_run >> end
+    [load_users_task, load_meetings_task, load_participants_task] >> merge_recordings_task >> set_last_run >> end
 
 etl_process()
