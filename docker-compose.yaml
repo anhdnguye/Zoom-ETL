@@ -20,7 +20,6 @@ x-airflow-common:
   volumes:
     - ./.env:/opt/airflow/.env
     - ./airflow/dags:/opt/airflow/dags
-    - ./airflow/airflow.cfg:/opt/airflow/airflow.cfg
     - ./src:/opt/airflow/src
     - airflow_logs:/opt/airflow/logs
     - airflow_plugins:/opt/airflow/plugins
