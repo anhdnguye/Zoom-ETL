@@ -70,7 +70,7 @@ CREATE TABLE recording_staging (
     recording_type VARCHAR(255), -- Specific type (e.g., shared_screen)
     dropbox_url TEXT, -- URL to download the file
     -- file_content BYTE, -- Blob storage for the actual recording file
-	file_path TEXT, -- Store S3 path to the recording
+	file_path TEXT -- Store S3 path to the recording
 );
 
 -- Add indexes for performance
