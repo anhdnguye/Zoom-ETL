@@ -158,7 +158,7 @@ class DataLoader:
 
         query = """
             INSERT INTO participant (
-                meeting_uuid, user_id, name, email, join_time,
+                meeting_uuid, user_id, name, user_email, join_time,
                 leave_time, duration, internal_user
             )
             VALUES %s
@@ -166,7 +166,7 @@ class DataLoader:
                 meeting_uuid = EXCLUDED.meeting_uuid,
                 user_id = EXCLUDED.user_id,
                 name = EXCLUDED.name,
-                email = EXCLUDED.email,
+                user_email = EXCLUDED.user_email,
                 join_time = EXCLUDED.join_time,
                 leave_time = EXCLUDED.leave_time,
                 duration = EXCLUDED.duration,
@@ -180,7 +180,7 @@ class DataLoader:
                     participant.get('meeting_uuid'),
                     participant.get('user_id'),
                     participant.get('name'),
-                    participant.get('email'),
+                    participant.get('user_email'),
                     self._parse_datetime(participant.get('join_time')),
                     self._parse_datetime(participant.get('leave_time')),
                     participant.get('duration'),
