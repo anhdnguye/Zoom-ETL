@@ -162,7 +162,7 @@ class DataLoader:
                 leave_time, duration, internal_user
             )
             VALUES %s
-            ON CONFLICT (id) DO UPDATE SET
+            ON CONFLICT (user_id, meeting_uuid) DO UPDATE SET
                 meeting_uuid = EXCLUDED.meeting_uuid,
                 user_id = EXCLUDED.user_id,
                 name = EXCLUDED.name,
@@ -193,23 +193,6 @@ class DataLoader:
     def merge_recordings(self):
         """Merge recordings from staging table to main recording table"""
         try:
-            # First, ensure the recording table exists (you might want to handle this in schema migration)
-            self.cursor.execute("""
-                CREATE TABLE IF NOT EXISTS recording (
-                    id TEXT PRIMARY KEY,
-                    meeting_uuid TEXT REFERENCES meeting(uuid),
-                    file_type TEXT,
-                    file_size BIGINT,
-                    file_extension TEXT,
-                    recording_start TIMESTAMP WITH TIME ZONE,
-                    recording_end TIMESTAMP WITH TIME ZONE,
-                    recording_type TEXT,
-                    dropbox_url TEXT,
-                    file_path TEXT,
-                    processed_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-                )
-            """)
-            
             # Merge from staging to recording
             self.cursor.execute("""
                 INSERT INTO recording (
@@ -232,8 +215,7 @@ class DataLoader:
                     recording_end = EXCLUDED.recording_end,
                     recording_type = EXCLUDED.recording_type,
                     dropbox_url = EXCLUDED.dropbox_url,
-                    file_path = EXCLUDED.file_path,
-                    processed_at = CURRENT_TIMESTAMP
+                    file_path = EXCLUDED.file_path
             """)
             
             # Cleanup staging table - remove processed records
