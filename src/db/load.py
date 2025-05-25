@@ -221,7 +221,7 @@ class DataLoader:
                     s.id, s.meeting_uuid, s.file_type, s.file_size, s.file_extension,
                     s.recording_start, s.recording_end, s.recording_type,
                     s.dropbox_url, s.file_path
-                FROM zoom_recordings_staging s
+                FROM recording_staging s
                 JOIN meeting m ON s.meeting_uuid = m.uuid
                 ON CONFLICT (id) DO UPDATE SET
                     meeting_uuid = EXCLUDED.meeting_uuid,
@@ -238,7 +238,7 @@ class DataLoader:
             
             # Cleanup staging table - remove processed records
             self.cursor.execute("""
-                DELETE FROM zoom_recordings_staging s
+                DELETE FROM recording_staging s
                 WHERE EXISTS (
                     SELECT 1 FROM recording r 
                     WHERE r.id = s.id AND r.meeting_uuid = s.meeting_uuid
