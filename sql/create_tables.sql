@@ -40,7 +40,8 @@ CREATE TABLE participant (
     duration INTEGER, -- Duration in seconds for analysis
     internal_user BOOLEAN DEFAULT FALSE, -- Flag for internal vs external users
     FOREIGN KEY (meeting_uuid) REFERENCES meeting(uuid),
-    FOREIGN KEY (id) REFERENCES "user"(id)
+    FOREIGN KEY (id) REFERENCES "user"(id),
+    CONSTRAINT participant_meeting_user_unique UNIQUE (meeting_uuid, user_id)
 );
 
 -- Create the recording table
