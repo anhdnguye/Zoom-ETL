@@ -123,7 +123,7 @@ class DataExtractor:
         try:
             response = requests.get(url, headers=headers)
             response.raise_for_status()
-            return response
+            return response.json()
         except RequestException as e:
             self.logger.error(f"Failed to get meeting details from {url}: {e}")
 
