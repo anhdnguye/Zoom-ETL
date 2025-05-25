@@ -82,7 +82,7 @@ def etl_process():
         return [meeting_infos[i:i + chunk_size] for i in range(0, len(meeting_infos), chunk_size)]
 
     @task
-    def process_meeting_details(meeting_info: List[Dict]) -> List[Dict]:
+    def process_meeting_details(meeting_infos: List[Dict]) -> List[Dict]:
         """Task to get meeting details and save to metadata directory."""
         extractor = DataExtractor('https://api.zoom.us/v2')
         return [{
@@ -196,16 +196,16 @@ def etl_process():
         user_meetings = process_meeting_chunk.partial(last_run_timestamp=last_run).expand(chunk=user_id_chunks)
 
     # Generate meeting id and user id for each user meeting
-    meeting_infos = flatten_meeting_info(user_meeting=user_meetings)
+    meeting_data = flatten_meeting_info(user_meeting=user_meetings)
 
     # Split meeting IDs into chunks
-    meeting_chunks = split_meetings(meeting_infos, chunk_size=200)
+    meeting_chunks = split_meetings(meeting_data, chunk_size=200)
 
     # Process meeting details and participants using dynamic task mapping
-    with TaskGroup(group_id='process_meeting_details') as meeting_detail_group:
+    with TaskGroup(group_id='meeting_details') as meeting_detail_group:
         meeting_details_tasks = process_meeting_details.expand(meeting_infos=meeting_chunks)
     
-    with TaskGroup(group_id='process_meeting_participants') as meeting_participant_group:
+    with TaskGroup(group_id='meeting_participants') as meeting_participant_group:
         meeting_participants_tasks = process_meeting_participants.expand(meeting_infos=meeting_chunks)
     
     # Load data into the database
@@ -224,7 +224,7 @@ def etl_process():
     user_ids >> user_id_chunks
     user_id_chunks >> user_info_group
     [user_id_chunks, last_run] >> user_meetings_group
-    user_meetings_group >> meeting_infos >> meeting_chunks
+    user_meetings_group >> meeting_data >> meeting_chunks
     meeting_chunks >> [meeting_detail_group, meeting_participant_group]
 
     # Load data after extraction
