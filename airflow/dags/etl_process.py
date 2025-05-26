@@ -30,7 +30,7 @@ default_args={
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
     'start_date': datetime(2024, 5, 21)
-    }
+}
 
 @dag('Zoom_ETL', schedule='@once', default_args=default_args,
      catchup=False, tags=['Zoom'], description='Extracting Data from Zoom')
@@ -230,9 +230,9 @@ def etl_process():
     # Load data after extraction
     user_infos >> load_users_task
     meeting_detail_group >> load_meetings_task
-    meeting_participant_group >> load_participants_task
+    [meeting_participant_group, load_meetings_task] >> load_participants_task
     
     # Final dependency chain
-    [load_users_task, load_meetings_task, load_participants_task] >> merge_recordings_task >> set_last_run >> end
+    [load_users_task, load_participants_task] >> merge_recordings_task >> set_last_run >> end
 
 etl_process()
