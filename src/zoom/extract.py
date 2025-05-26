@@ -155,7 +155,22 @@ class DataExtractor:
             raise  # Important: re-raise so retry can occur
 
         except RequestException as req_err:
-            self.logger.error(f"Failed to get meeting details from {url}: {req_err}")
+            self.logger.warning(f"Failed to get meeting details from {url}: {req_err}")
+            if "Can not access webinar info," in response.get("message"):
+                _message = response.get("message")
+                webinar_id = _message.split(", ")[1]
+                webinar_url = f"{self.base_url}/webinars/{webinar_id}"
+                try:
+                    response = requests.get(webinar_url, headers=headers)
+                    response.raise_for_status()
+                    webinar_payload = response.json()
+                    webinar_payload["uuid"] = meeting_id
+                    webinar_payload["end_time"] = None
+                    webinar_payload["participants_count"] = None
+                    return webinar_payload
+                except RecursionError as e:
+                    self.logger.error(f"Failed to get webinar details from {webinar_url}: {e}")
+
 
     @token_manager.token_required
     def get_meeting_participants(self, meeting_id: str, token: Optional[str]=None) -> List[Dict]:
