@@ -8,6 +8,15 @@ from zoom.oauth import token_manager
 from airflow.sdk import Variable
 from urllib.parse import quote
 
+from errors.error_handler import PipelineErrorHandler, retryable
+from errors.error_types import ErrorType
+
+# Setup error handler
+handler = PipelineErrorHandler(
+    admin_email="admin@example.com",
+    dag_id="zoom_pipeline"
+)
+
 class DataExtractor:
     def __init__(self, base_url):
         self.base_url = base_url.rstrip('/')
@@ -58,6 +67,7 @@ class DataExtractor:
             
         return list(set(user_emails))
     
+    @retryable(handler=handler, retries=3, delay=2, error_type=ErrorType.API_ERROR)
     @token_manager.token_required
     def get_user_details(self, user_id: str, token: Optional[str]=None) -> Dict:
         """Get details for a specific user."""
@@ -110,6 +120,7 @@ class DataExtractor:
                 lstMeetings.extend(meeting['uuid'] for meeting in page.get('meetings', []))
         return lstMeetings
 
+    @retryable(handler=handler, retries=3, delay=2, error_type=ErrorType.API_ERROR)
     @token_manager.token_required
     def get_meeting_details(self, meeting_id: str, token: Optional[str]=None) -> Dict:
         """Get details for a specific meeting using both metrics and meetings endpoints."""
@@ -125,6 +136,8 @@ class DataExtractor:
             response.raise_for_status()
             return response.json()
         except RequestException as e:
+            if response.status_code == 404:
+                raise ValueError("Meeting not found")
             self.logger.error(f"Failed to get meeting details from {url}: {e}")
 
     @token_manager.token_required
