@@ -3,7 +3,7 @@ import logging
 from datetime import datetime, timedelta
 import time
 from typing import List, Dict, Optional, Generator
-from requests.exceptions import RequestException
+from requests.exceptions import RequestException, HTTPError
 from zoom.oauth import token_manager
 from airflow.sdk import Variable
 from urllib.parse import quote
@@ -71,18 +71,28 @@ class DataExtractor:
     @token_manager.token_required
     def get_user_details(self, user_id: str, token: Optional[str]=None) -> Dict:
         """Get details for a specific user."""
-        try:
-            headers = {
+        headers = {
                 'Authorization': f'Bearer {token}',
                 'Content-Type': 'application/json'
             }
             
-            url = f"{self.base_url}/users/{user_id}"
+        url = f"{self.base_url}/users/{user_id}"
+
+        try:
             response = requests.get(url, headers=headers)
             response.raise_for_status()
             return response.json()
-        except RequestException as e:
-            self.logger.error(f"Error getting user details for {user_id}: {e}")
+        
+        except HTTPError as http_err:
+            status = http_err.response.status_code if http_err.response else "Unknown"
+            if status == 404:
+                self.logger.warning(f"Meeting not found (404): {url}")
+            else:
+                self.logger.error(f"HTTP error occurred while accessing {url}: {http_err}")
+            raise  # Important: re-raise so retry can occur
+
+        except RequestException as req_err:
+            self.logger.error(f"Error getting user details for {user_id}: {req_err}")
             raise
     
     def getRange(self, start: datetime, end: datetime) -> Generator[tuple[datetime, datetime], None, None]:
@@ -135,10 +145,17 @@ class DataExtractor:
             response = requests.get(url, headers=headers)
             response.raise_for_status()
             return response.json()
-        except RequestException as e:
-            if response.status_code == 404:
-                raise ValueError("Meeting not found")
-            self.logger.error(f"Failed to get meeting details from {url}: {e}")
+        
+        except HTTPError as http_err:
+            status = http_err.response.status_code if http_err.response else "Unknown"
+            if status == 404:
+                self.logger.warning(f"Meeting not found (404): {url}")
+            else:
+                self.logger.error(f"HTTP error occurred while accessing {url}: {http_err}")
+            raise  # Important: re-raise so retry can occur
+
+        except RequestException as req_err:
+            self.logger.error(f"Failed to get meeting details from {url}: {req_err}")
 
     @token_manager.token_required
     def get_meeting_participants(self, meeting_id: str, token: Optional[str]=None) -> List[Dict]:
