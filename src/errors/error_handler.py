@@ -1,7 +1,56 @@
 import logging
 import traceback
 import datetime
-from error_types import ErrorType
+from errors.error_types import ErrorType
+from functools import wraps
+import time
+
+def retryable(handler, retries=3, delay=5, error_type=ErrorType.UNKNOWN_ERROR, retry_condition=None):
+    """
+    Decorator for retrying a function with exponential backoff and error handling.
+
+    Args:
+        handler (PipelineErrorHandler): Error handler instance to use.
+        retries (int): Number of retry attempts.
+        delay (int): Initial delay between retries in seconds.
+        error_type (ErrorType): Type of error to log on failure.
+        retry_condition (Callable): Optional function to determine if result warrants retry.
+
+    Usage:
+        @retryable(handler, retries=3, delay=2, error_type=ErrorType.API_ERROR)
+        def fetch_data():
+            ...
+    """
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            attempt = 0
+            while attempt < retries:
+                try:
+                    result = func(*args, **kwargs)
+                    if retry_condition and not retry_condition(result):
+                        raise ValueError("Retry condition not satisfied")
+                    return result
+                except Exception as e:
+                    attempt += 1
+                    if attempt == retries:
+                        handler.handle_error(
+                            error_type=error_type,
+                            error_message=str(e),
+                            context={
+                                "function": func.__name__,
+                                "args": args,
+                                "kwargs": kwargs,
+                                "attempt": attempt,
+                                "trace": traceback.format_exc()
+                            }
+                        )
+                        raise
+                    else:
+                        handler.logger.warning(f"[Retry {attempt}/{retries}] {func.__name__} failed: {e}")
+                        time.sleep(delay * (2 ** (attempt - 1)))  # Exponential backoff
+        return wrapper
+    return decorator
 
 class PipelineErrorHandler:
     def __init__(self, admin_email: str, dag_id: str, task_id: str = None):
