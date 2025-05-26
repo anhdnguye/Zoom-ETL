@@ -146,7 +146,7 @@ class DataLoader:
                     meeting.get('participants_count'),
                     meeting.get('type')
                 )
-                for meeting in batch
+                for meeting in batch if meeting
             ]
             self._execute_batch(query, data, "meeting")
 
