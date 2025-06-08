@@ -152,7 +152,6 @@ class DataExtractor:
                 self.logger.warning(f"Meeting not found (404): {url}")
             elif status == 400:
                 self.logger.warning(f"Potential Webinar: {url}")
-                self.logger.warning(http_err.response.json())
                 resp = http_err.response.json()
                 _message = resp.get("message")
                 if "Can not access webinar info," in _message:
