@@ -86,7 +86,7 @@ class DataExtractor:
         except HTTPError as http_err:
             status = http_err.response.status_code if http_err.response else "Unknown"
             if status == 404:
-                self.logger.warning(f"Meeting not found (404): {url}")
+                self.logger.warning(f"User not found (404): {url}")
             else:
                 self.logger.error(f"HTTP error occurred while accessing {url}: {http_err}")
             raise  # Important: re-raise so retry can occur
@@ -147,30 +147,34 @@ class DataExtractor:
             return response.json()
         
         except HTTPError as http_err:
-            status = http_err.response.status_code if http_err.response else "Unknown"
+            status = http_err.response.status_code
             if status == 404:
                 self.logger.warning(f"Meeting not found (404): {url}")
+            elif status == 400:
+                self.logger.warning(f"Potential Webinar: {url}")
+                self.logger.warning(http_err.response.json())
+                resp = http_err.response.json()
+                _message = resp.get("message")
+                if "Can not access webinar info," in _message:
+                    webinar_id = _message.split(", ")[1]
+                    webinar_url = f"{self.base_url}/webinars/{webinar_id}"
+                    try:
+                        response = requests.get(webinar_url, headers=headers)
+                        response.raise_for_status()
+                        webinar_payload = response.json()
+                        webinar_payload["uuid"] = meeting_id
+                        webinar_payload["end_time"] = None
+                        webinar_payload["participants_count"] = None
+                        return webinar_payload
+                    except Exception as e:
+                        self.logger.error(f"Failed to get webinar details from {webinar_url}: {e}")
             else:
                 self.logger.error(f"HTTP error occurred while accessing {url}: {http_err}")
             raise  # Important: re-raise so retry can occur
 
         except RequestException as req_err:
-            self.logger.warning(f"Failed to get meeting details from {url}: {req_err}")
-            if "Can not access webinar info," in response.get("message"):
-                _message = response.get("message")
-                webinar_id = _message.split(", ")[1]
-                webinar_url = f"{self.base_url}/webinars/{webinar_id}"
-                try:
-                    response = requests.get(webinar_url, headers=headers)
-                    response.raise_for_status()
-                    webinar_payload = response.json()
-                    webinar_payload["uuid"] = meeting_id
-                    webinar_payload["end_time"] = None
-                    webinar_payload["participants_count"] = None
-                    return webinar_payload
-                except RecursionError as e:
-                    self.logger.error(f"Failed to get webinar details from {webinar_url}: {e}")
-
+            self.logger.error(f"Error getting meeting details for {url}: {req_err}")
+            raise
 
     @token_manager.token_required
     def get_meeting_participants(self, meeting_id: str, token: Optional[str]=None) -> List[Dict]:
