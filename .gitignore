@@ -1,4 +1,6 @@
 *.ipynb
+.venv
+lambda/lambda_layer
 .env
 .vs/
 .idea/

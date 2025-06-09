@@ -1,11 +1,61 @@
 import os
 import re
+import json
 import dropbox
 from dropbox.exceptions import ApiError
 from typing import Dict, Optional
 from datetime import datetime
 import pytz
 import psycopg2
+import boto3
+import logging
+import traceback
+from botocore.exceptions import ClientError
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+class ErrorHandler(Exception):
+    def __init__(self, message, error_type=None, details=None):
+        self.message = message
+        self.error_tpe = error_type
+        self.details = details
+        super().__init__(self.message)
+
+    def log(self):
+        """Log the error details to CloudWatch"""
+        error_info = {
+            "error_type": self.error_type,
+            "message": self.message,
+            "details": self.details
+        }
+        logger.error(f"Recording Processing Error: {json.dumps(error_info)}")
+        if self.details and isinstance(self.details, Exception):
+            logger.error(f"Exception traceback: {traceback.format_exc()}")
+
+def get_secret(secret_name: str):
+    region_name = os.environ.get('REGION', 'us-east-1')
+
+    # Create a Secrets Manager client
+    session = boto3.session.Session()
+    client = session.client(
+        service_name='secretsmanager',
+        region_name=region_name
+    )
+
+    try:
+        get_secret_value_response = client.get_secret_value(
+            SecretId=secret_name
+        )
+    except ClientError as e:
+        raise ErrorHandler(
+            message=f"Failed to retrieve secret {secret_name}",
+            error_type="SecretsManagerError",
+            details=str(e)
+        )
+
+    secret = get_secret_value_response['SecretString']
+    return json.loads(secret)
 
 def parse_datetime(date_str: Optional[str]) -> Optional[datetime]:
     """
@@ -23,7 +73,7 @@ def parse_datetime(date_str: Optional[str]) -> Optional[datetime]:
             dt = dt.replace(tzinfo=pytz.UTC)
         return dt
     except ValueError as e:
-        print(f"Error parsing date {date_str}: {e}")
+        logger.error(f"Error parsing date {date_str}: {e}")
         return None
 
 
@@ -50,22 +100,45 @@ def upload_to_dropbox_and_get_link(file_content, file_path: str):
         shared_link_metadata = dbx.sharing_create_shared_link_with_settings(f"/{file_path}")
         return shared_link_metadata.url.replace('?dl=0', '?dl=1')  # Make it direct download if preferred
     except ApiError as e:
-        raise RuntimeError(f"Dropbox upload failed: {str(e)}")
+        logger.error(f"Error with {file_path}")
+        raise ErrorHandler(
+            message=f"Dropbox upload failed for {file_path}",
+            error_type="DropboxError",
+            details=str(e)
+        )
 
 
 def insert_to_rds(metadata: Dict):
     """Inserts metadata into RDS PostgreSQL staging table."""
     conn = None
     try:
+        secret_name = os.environ.get('RDS_SECRET_NAME')
+        secrets = get_secret(secret_name)
+
+        # Extract credentials (adjust keys if your secret format differs)
+        rds_host = secrets.get('host')
+        rds_port = secrets.get('port', 5432)
+        rds_db = secrets.get('dbname')
+        rds_user = secrets.get('username')
+        rds_password = secrets.get('password')
+
+        if not all([rds_host, rds_db, rds_user, rds_password]):
+            raise ErrorHandler(
+                message="Incomplete RDS credentials in Secrets Manager.",
+                error_type="CredentialError"
+            )
+
         # Connect using environment variables
         conn = psycopg2.connect(
-            host=os.environ.get('RDS_HOST'),
-            port=os.environ.get('RDS_PORT', 5432),
-            database=os.environ.get('RDS_DB'),
-            user=os.environ.get('RDS_USER'),
-            password=os.environ.get('RDS_PASSWORD')
+            host=rds_host,
+            port=rds_port,
+            database=rds_db,
+            user=rds_user,
+            password=rds_password
         )
         cur = conn.cursor()
+
+        logger.info(f"Inserting recording metadata for ID: {metadata.get('id')}, Meeting UUID: {metadata.get('meeting_uuid')}")
 
         cur.execute("""
             INSERT INTO recording_staging(
@@ -101,10 +174,16 @@ def insert_to_rds(metadata: Dict):
         })
         conn.commit()
         cur.close()
+        logger.info(f"Successfully inserted recording metadata for ID: {metadata.get('id')}")
     except Exception as e:
         if conn:
             conn.rollback()
-        raise RuntimeError(f"RDS insert failed: {str(e)}")
+
+        raise ErrorHandler(
+            message=f"RDS insert failed for recording ID: {metadata.get('id', 'unknown')}",
+            error_type="DatabaseError",
+            details=str(e)
+        )
     finally:
         if conn:
             conn.close()

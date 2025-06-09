@@ -1,12 +1,15 @@
 import json
 import boto3
-import base64
+import logging
 import os
-from datetime import datetime
 import requests
 
 from utils import *
 
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+s3_resource = boto3.resource('s3')
 s3_client = boto3.client('s3')
 
 S3_BUCKET = os.environ.get('S3_BUCKET_NAME', 'your-default-bucket')
@@ -33,12 +36,19 @@ def select_preferred_recordings(zoom_recordings):
 
 def lambda_handler(event, context):
     try:
-        print("Received event:", json.dumps(event))
+        logger.info("Received Zoom event:", json.dumps(event))
 
         # Zoom Webhook data (body is stringified JSON)
         body = json.loads(event['body'])
         recording_data = body.get('payload', {}).get('object', {})
 
+        required_fields = ['uuid', 'topic', 'host_email', 'start_time', 'recording_files']
+        missing_fields = [field for field in required_fields if field not in recording_data]
+        if missing_fields:
+            raise ErrorHandler(
+                message=f"Missing required fields in payload: {', '.join(missing_fields)}",
+                error_type="ValidationError"
+            )
         meeting_uuid = recording_data.get('uuid')
         topic = sanitize_name(recording_data.get('topic', 'unknown'))
         host_email = recording_data.get('host_email', 'unknown')
@@ -48,53 +58,57 @@ def lambda_handler(event, context):
         selected_files = select_preferred_recordings(recording_files)
 
         for metadata in selected_files:
-            metadata.update(meeting_uuid=meeting_uuid)
+            metadata['meeting_uuid'] = meeting_uuid
 
             if not metadata.get('download_url'):
+                logger.warning(f"Skipping file without download_url: {metadata.get('id')}")
                 continue
             
             file_type = metadata.get('recording_type')
             file_ext = metadata.get('file_extension')
-            # Example: Save metadata to S3 (you can also use Dropbox SDK)
             s3_key = f"recordings/{host_email}/{topic}/{start_time}/{file_type}.{file_ext}"
 
-            response = requests.get(metadata.get('download_url'), stream=True)
-            response.raise_for_status()
-
-            # Read content into memory (for small files) or use temp file for larger ones
-            content = io.BytesIO()
-            for chunk in response.iter_content(chunk_size=512 * 1024):
-                content.write(chunk)
-            content.seek(0)
-
-            s3_client.upload_fileobj(
-                Fileobj=content,
-                Bucket=S3_BUCKET,
-                Key=s3_key
-            )
-            s3_link = f"s3://{S3_BUCKET}/{s3_key}"
-            metadata.update(file_path=s3_link)
-
-            # Reset content position for Dropbox upload
-            content.seek(0)
-
             try:
-                dropbox_link = upload_to_dropbox_and_get_link(response.content, s3_key)
-                metadata.update(dropbox_url=dropbox_link)
+                with requests.get(metadata['download_url'], stream=True, timeout=30) as response:
+                    response.raise_for_status()
+                    s3_resource.Bucket(S3_BUCKET).upload_fileobj(response.raw, s3_key)
+                    s3_link = f"s3://{S3_BUCKET}/{s3_key}"
+                    metadata['file_path'] = s3_link
+
+                    response.raw.seek(0)
+
+                    try:
+                        dropbox_link = upload_to_dropbox_and_get_link(response.raw, s3_key)
+                        metadata['dropbox_url'] = dropbox_link
+                    except ErrorHandler as e:
+                        logger.error("Dropbox upload failed: %s", str(e), exc_info=True)
+                        metadata['dropbox_url'] = None
+
+                insert_to_rds(metadata)
+
+            except requests.exceptions.RequestException as e:
+                raise ErrorHandler(
+                    message=f"File download/upload failed for {s3_key}: {str(e)}",
+                    error_type="DownloadUploadError"
+                )
             except Exception as e:
-                print(f"Dropbox upload failed: {str(e)}")
-                metadata.update(dropbox_url=None)
-            
-            insert_to_rds(metadata)
+                logger.error(f"Error processing file {s3_key}, {str(e)}", exc_info=True)
 
         return {
             "statusCode": 200,
             "body": json.dumps({"message": "Recording processed successfully"})
         }
 
+    except ErrorHandler as e:
+        logger.error(f"Webhook processing error: {str(e)}", exc_info=True)
+        return {
+            "statusCode": 400,
+            "body": json.dumps({"error": str(e)})
+        }
+
     except Exception as e:
-        print("Error:", str(e))
+        logger.error(f"Unexpected error: {str(e)}", exc_info=True)
         return {
             "statusCode": 500,
-            "body": json.dumps({"error": str(e)})
+            "body": json.dumps({"error": "Internal server error"})
         }
