@@ -88,7 +88,7 @@ def sanitize_name(name: str) -> str:
     return sanitized[:255]
 
 
-def upload_to_dropbox_and_get_link(file_content, file_path: str):
+def upload_to_dropbox_and_get_link(file_content: bytes, file_path: str) -> str:
     """Uploads bytes content to Dropbox and returns a shareable link."""
     access_token = os.environ.get('DROPBOX_ACCESS_TOKEN')
     if not access_token:
