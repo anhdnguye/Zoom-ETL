@@ -3,6 +3,7 @@ import boto3
 import logging
 import os
 import requests
+import tempfile
 
 from utils import *
 
@@ -69,16 +70,26 @@ def lambda_handler(event, context):
             s3_key = f"recordings/{host_email}/{topic}/{start_time}/{file_type}.{file_ext}"
 
             try:
-                with requests.get(metadata['download_url'], stream=True, timeout=30) as response:
+                with tempfile.NamedTemporaryFile(delete=True) as temp_file:
+                    response = requests.get(metadata.get('download_url'), stream=True)
                     response.raise_for_status()
-                    s3_resource.Bucket(S3_BUCKET).upload_fileobj(response.raw, s3_key)
+                    for chunk in response.iter_content(chunk_size=512 * 1024):
+                        temp_file.write(chunk)
+                    temp_file.flush()
+                    temp_file.seek(0)
+
+                    s3_client.upload_fileobj(
+                        Fileobj=temp_file,
+                        Bucket=S3_BUCKET,
+                        Key=s3_key
+                    )
                     s3_link = f"s3://{S3_BUCKET}/{s3_key}"
                     metadata['file_path'] = s3_link
 
-                    response.raw.seek(0)
+                    temp_file.seek(0)
 
                     try:
-                        dropbox_link = upload_to_dropbox_and_get_link(response.raw, s3_key)
+                        dropbox_link = upload_to_dropbox_and_get_link(temp_file.read(), s3_key)
                         metadata['dropbox_url'] = dropbox_link
                     except ErrorHandler as e:
                         logger.error("Dropbox upload failed: %s", str(e), exc_info=True)
