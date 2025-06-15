@@ -15,6 +15,8 @@ from botocore.exceptions import ClientError
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
+_secret_cache = {}
+
 class ErrorHandler(Exception):
     def __init__(self, message, error_type=None, details=None):
         self.message = message
@@ -111,16 +113,18 @@ def upload_to_dropbox_and_get_link(file_content, file_path: str):
 def insert_to_rds(metadata: Dict):
     """Inserts metadata into RDS PostgreSQL staging table."""
     conn = None
+    global _secret_cache
     try:
-        secret_name = os.environ.get('RDS_SECRET_NAME')
-        secrets = get_secret(secret_name)
+        if not _secret_cache:
+            secret_name = os.environ.get('RDS_SECRET_NAME')
+            _secret_cache = get_secret(secret_name)
 
         # Extract credentials (adjust keys if your secret format differs)
-        rds_host = secrets.get('host')
-        rds_port = secrets.get('port', 5432)
-        rds_db = secrets.get('dbname')
-        rds_user = secrets.get('username')
-        rds_password = secrets.get('password')
+        rds_host = _secret_cache.get('host')
+        rds_port = _secret_cache.get('port', 5432)
+        rds_db = _secret_cache.get('dbname')
+        rds_user = _secret_cache.get('username')
+        rds_password = _secret_cache.get('password')
 
         if not all([rds_host, rds_db, rds_user, rds_password]):
             raise ErrorHandler(
